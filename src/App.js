@@ -5,6 +5,7 @@ import Scroll from 'react-scroll';
 import HomePage from './Pages/HomePage/Home.js';
 import PersonalNavbar from './Pages/Navbar/Navbar.js';
 
+
 function App() {
     return (
         <Router>

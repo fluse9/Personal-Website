@@ -6,6 +6,8 @@ import $ from 'jquery';
 import profile from "../../Assets/images/profile.jpg";
 import website from "../../Assets/images/website.png";
 import web_app from "../../Assets/images/web app.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
 class Home extends React.Component {
     state = {
@@ -176,6 +178,10 @@ class Home extends React.Component {
                                 Users select crops to plant and harvest, the farm's climate and nutrient solution, control LED brightness, and leave valuable feedback on each harvest.
                                 </h1>
                             </div>
+                            <h2 class="text11" style={{ marginTop: "245px", textAlign: "right" }}>
+                                React &emsp; Node.js &emsp; GraphQL &emsp; PostgreSQL
+                            </h2>
+                            <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#022140", marginTop: "15px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
                         </div>
                         <div class="card" type="portfolio">
                             <div class="overlay" type="right"><img src={website} alt="website" class="feature"></img></div>
@@ -191,6 +197,37 @@ class Home extends React.Component {
                                 Customers can order the Terrafarm 1 and any supplies they need to grow fresh fruits and vegetables, such as nutrients and seed pods .
                                 </h1>
                             </div>
+                            <h3 class="text11" style={{ marginTop: "245px", textAlign: "left" }}>
+                                React &emsp; JavaScript &emsp; HTML & CSS
+                            </h3>
+                            <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#022140", marginTop: "15px", float: "left", cursor: "pointer" }}></FontAwesomeIcon>
+                        </div>
+                    </div>
+                </Jumbotron>
+                <Jumbotron className="about">
+                    <h1 class="text3" style={{ textAlign: "center" }}>
+                        Other Projects
+                    </h1>
+                    <div class="main-cards4">
+                        <div class="card" type="projects">
+                            <div class="project-main">
+                                <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                <h1 class="text12">
+                                    Personal Website
+                                </h1>
+                                <h2 class="text13">
+                                    First iteration of my portfolio website built with React. I learned a lot about CSS styling, animations, and dynamic layouts.
+                                </h2>
+                            </div>
+                            <h3 class="text14">
+                                React &emsp; JS &emsp; HTML &emsp; CSS
+                            </h3>
+                        </div>
+                        <div class="card" type="projects">
+                        </div>
+                        <div class="card" type="projects">
+                        </div>
+                        <div class="card" type="projects">
                         </div>
                     </div>
                 </Jumbotron>
