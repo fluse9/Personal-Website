@@ -1,0 +1,444 @@
+.landing {
+    position: relative;
+    background: url("../../Assets/images/background.png") no-repeat center center fixed;
+    background-size: 100vw;
+    width: 100vw;
+    height: 100vh;
+}
+
+.about {
+    position: relative;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+}
+
+.main-cards1 {
+    display: grid;
+    grid-template-columns: 25vw 15vw;
+    grid-template-rows: 47.5vh;
+    grid-column-gap: 5vw;
+    grid-row-gap: 5vh;
+    margin-top: 100px;
+    margin-left: 27.5vw;
+    margin-right: 27.5vw;
+}
+
+.main-cards2 {
+    display: grid;
+    grid-template-columns: 10vw 30vw;
+    margin-top: 50px;
+    margin-left: 27.5vw;
+    margin-right: 27.5vw;
+}
+
+.main-cards3 {
+    display: grid;
+    grid-template-columns: 45vw;
+    grid-template-rows: 32px 400px 400px 400px 400px;
+    grid-row-gap: 30px;
+    margin-top: 50px;
+    margin-left: 27.5vw;
+    margin-right: 27.5vw;
+}
+
+.card {
+    background-color: white;
+}
+
+    .card[type="about"]:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        height: 100%;
+        width: 100%;
+    }
+
+    .card[type="experience"]:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        height: 100%;
+        width: 100%;
+    }
+
+    .card[type="portfolio"]:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        height: 100%;
+        width: 100%;
+    }
+
+    .card[type="about"]:nth-child(2) {
+        grid-column: 2;
+        grid-row: 2;
+        height: 100%;
+        width: 100%;
+    }
+
+    .card[type="experience"]:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+        height: 100%;
+        width: 100%;
+    }
+
+    .card[type="portfolio"]:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+        height: 100%;
+        width: 100%;
+    }
+
+    .card[type="portfolio"]:nth-child(3) {
+        grid-column: 1;
+        grid-row: 3;
+        height: 100%;
+        width: 100%;
+    }
+
+.container1 {
+    position: relative;
+    height: 400px;
+    padding-top: calc(50vh - 200px);
+    background: transparent;
+}
+
+.text1 {
+    text-align: center;
+    color: white;
+    font-family: 'GothamBold';
+    font-size: 64px;
+    line-height: 128px;
+    padding: 0;
+    margin: 0;
+}
+
+.text2 {
+    text-align: center;
+    color: white;
+    font-family: 'Avenir Next';
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+.text3 {
+    text-align: left;
+    color: #022140;
+    font-family: 'Avenir Next';
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.text4 {
+    text-align: left;
+    color: #6B6B6B;
+    font-family: 'Avenir Next';
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-top: 20px;
+    margin: 0;
+}
+
+.text5 {
+    text-align: left;
+    color: black;
+    font-family: 'Avenir Next';
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    padding-top: 65px;
+    margin: 0;
+}
+
+.text6 {
+    text-align: left;
+    color: #6B6B6B;
+    font-family: 'Avenir Next';
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-top: 10px;
+    margin: 0;
+}
+
+.text7 {
+    text-align: left;
+    color: #6B6B6B;
+    font-family: 'Avenir Next';
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-top: 10px;
+    margin: 0;
+}
+
+.text8[type=right] {
+    float: right;
+    text-align: right;
+    color: #188F88;
+    font-family: 'Avenir Next';
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+}
+
+.text8[type=left] {
+    float: left;
+    text-align: left;
+    color: #188F88;
+    font-family: 'Avenir Next';
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+}
+
+.text9[type=right] {
+    float: right;
+    text-align: right;
+    color: #022140;
+    font-family: 'Avenir Next';
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 600;
+    padding: 0;
+    margin-top: 10px;
+    width: 300px;
+}
+
+.text9[type=left] {
+    float: left;
+    text-align: left;
+    color: #022140;
+    font-family: 'Avenir Next';
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 600;
+    padding: 0;
+    margin-top: 10px;
+    width: 300px;
+}
+
+.text10[type=right] {
+    text-align: right;
+    color: #EFF3FE;
+    font-family: 'Avenir Next';
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-top: 25px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 25px;
+    margin: 0;
+}
+
+.text10[type=left] {
+    text-align: left;
+    color: #EFF3FE;
+    font-family: 'Avenir Next';
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    padding-top: 25px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 25px;
+    margin: 0;
+}
+
+.clear {
+    float: left;
+    background: transparent;
+    color: white;
+    font-family: 'Avenir Next';
+    font-size: 22px;
+    line-height: 44px;
+    font-weight: 400;
+    width: 200px;
+    margin-left: calc(50vw - 100px);
+    border-radius: 25px;
+    outline: none;
+    border: solid white 1px;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.border {
+    width: 100%;
+    height: 22.5vw;
+    margin-top: 75px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: 2px solid #022140;
+    box-shadow: 0px 0px 2px 0px #022140;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+    .border:hover {
+        border: 1px solid #022140;
+        box-shadow: 0px 0px 1px 0px #022140;
+        transition: 0.5s;
+    }
+
+.profile {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    z-index: 2;
+    opacity: 0.75;
+    transition: 0.5s;
+}
+
+    .profile:hover {
+        opacity: 1;
+        transition: 0.5s;
+    }
+
+.workplace {
+    width: 125px;
+    height: 50px;
+    font-size: 16px;
+    font-family: 'Avenir Next';
+    font-weight: 500;
+    text-align: left;
+    text-indent: 20px;
+    color: #6B6B6B;
+    background: white;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    margin-left: -36px;
+    padding-left: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.slider-container {
+    position: absolute;
+    margin-top: 47px;
+    margin-left: -43px;
+    width: 100px;
+    height: 4px;
+    transform: rotate(90deg);
+}
+
+    .slider-container .bar {
+        position: absolute;
+        z-index: 0;
+        border-radius: 20px;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background-color: #6B6B6B;
+        opacity: 1;
+        box-shadow: none;
+    }
+
+    /* The slider itself */
+    .slider-container .slider {
+        position: relative;
+        z-index: 0 !important;
+        -webkit-appearance: none; /* Override default CSS styles */
+        width: 100%; /* Full-width */
+        height: 0px; /* Specified height */
+        background: transparent; /* Grey background */
+        border-radius: 25px;
+        outline: none; /* Remove outline */
+        opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+        transition: opacity .2s;
+    }
+        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+        .slider-container .slider::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            width: 50px; /* Set a specific slider handle width */
+            height: 4px; /* Slider handle height */
+            background: #022140; /* Green background */
+            border-radius: 25px;
+            box-shadow: none;
+            margin-top: -17px;
+            margin-left: 2x;
+        }
+
+.feature {
+    width: 100%;
+    z-index: 0;
+    opacity: 0.75;
+    transition: 0.5s;
+    border-radius: 10px;
+    z-index: 2
+}
+
+    .feature:hover {
+        opacity: 1;
+        transition: 0.5s;
+    }
+
+.overlay[type=left] {
+    float: left;
+    width: 62.5%;
+    height: 84.5%;
+    background: #188F88;
+    z-index: 1;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.overlay[type=right] {
+    float: right;
+    width: 62.5%;
+    height: 84.5%;
+    background: #188F88;
+    z-index: 1;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.overlay[type=profile] {
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: #022140;
+    z-index: 1;
+    border-radius: 10px;
+    margin-top: -20px;
+    margin-left: -20px;
+}
+
+.textbox[type=right] {
+    position: absolute;
+    width: 450px;
+    height: 146px;
+    background: #022140;
+    z-index: 3;
+    margin-top: 80px;
+    margin-left: calc(45% - 450px);
+    border-radius: 10px;
+}
+
+.textbox[type=left] {
+    position: absolute;
+    width: 450px;
+    height: 146px;
+    background: #022140;
+    z-index: 3;
+    margin-top: 80px;
+    margin-left: 0;
+    border-radius: 10px;
+}
+
+    .textbox:hover {
+        box-shadow: 0px 0px 3px 0px black;
+        transition: 0.1s;
+    }

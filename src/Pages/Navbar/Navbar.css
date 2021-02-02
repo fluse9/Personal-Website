@@ -1,0 +1,45 @@
+.navbar {
+    background: url("../../Assets/images/background.png") no-repeat center center fixed;
+    background-size: 100vw;
+    width: 100vw;
+    height: 50px;
+    overflow: hidden;
+}
+
+.nav-item-container {
+    text-align: center;
+    margin-top: -40px;
+}
+
+    .nav-list {
+        width: 100%;
+        display: inline;
+    }
+
+.nav-item {
+    display: inline;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.nav-item>a {
+    font-size: 16px;
+    color: white;
+    font-family: 'Avenir Next';
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+    .nav-item>a:hover {
+        font-size: 18px;
+        transition: 0.5s;
+    }
+
+.header1 {
+    font-size: 16px;
+    color: white;
+    font-family: 'Avenir Next';
+    font-weight: 400;
+}
