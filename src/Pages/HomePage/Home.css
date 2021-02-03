@@ -1,9 +1,145 @@
-.landing {
-    position: relative;
-    background: url("../../Assets/images/background.png") no-repeat center center fixed;
-    background-size: 100vw;
-    width: 100vw;
-    height: 100vh;
+@media only screen and (max-width: 50em) {
+    .landing {
+        position: relative;
+        background: url("../../Assets/images/background.png") no-repeat center center fixed;
+        background-size: 250vw;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .text1 {
+        text-align: center;
+        color: white;
+        font-family: 'GothamBold';
+        font-size: 44px;
+        line-height: 88px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .text2 {
+        text-align: center;
+        color: white;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
+    }
+
+    .clear {
+        float: left;
+        background: transparent;
+        color: white;
+        font-family: 'Avenir Next';
+        font-size: 18px;
+        line-height: 36px;
+        font-weight: 500;
+        width: 150px;
+        margin-left: calc(50vw - 75px);
+        border-radius: 25px;
+        outline: none;
+        border: solid white 1px;
+        box-shadow: none;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 50em) and (max-width: 84em) {
+    .landing {
+        position: relative;
+        background: url("../../Assets/images/background.png") no-repeat center center fixed;
+        background-size: 150vw;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .text1 {
+        text-align: center;
+        color: white;
+        font-family: 'GothamBold';
+        font-size: 56px;
+        line-height: 112px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .text2 {
+        text-align: center;
+        color: white;
+        font-family: 'Avenir Next';
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+    }
+
+    .clear {
+        float: left;
+        background: transparent;
+        color: white;
+        font-family: 'Avenir Next';
+        font-size: 22px;
+        line-height: 44px;
+        font-weight: 400;
+        width: 200px;
+        margin-left: calc(50vw - 100px);
+        border-radius: 25px;
+        outline: none;
+        border: solid white 1px;
+        box-shadow: none;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 84em) {
+    .landing {
+        position: relative;
+        background: url("../../Assets/images/background.png") no-repeat center center fixed;
+        background-size: 100vw;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .text1 {
+        text-align: center;
+        color: white;
+        font-family: 'GothamBold';
+        font-size: 64px;
+        line-height: 128px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .text2 {
+        text-align: center;
+        color: white;
+        font-family: 'Avenir Next';
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+    }
+
+    .clear {
+        float: left;
+        background: transparent;
+        color: white;
+        font-family: 'Avenir Next';
+        font-size: 22px;
+        line-height: 44px;
+        font-weight: 400;
+        width: 200px;
+        margin-left: calc(50vw - 100px);
+        border-radius: 25px;
+        outline: none;
+        border: solid white 1px;
+        box-shadow: none;
+        cursor: pointer;
+    }
 }
 
 .about {
@@ -137,27 +273,6 @@
     height: 400px;
     padding-top: calc(50vh - 200px);
     background: transparent;
-}
-
-.text1 {
-    text-align: center;
-    color: white;
-    font-family: 'GothamBold';
-    font-size: 64px;
-    line-height: 128px;
-    padding: 0;
-    margin: 0;
-}
-
-.text2 {
-    text-align: center;
-    color: white;
-    font-family: 'Avenir Next';
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 400;
-    padding: 0;
-    margin: 0;
 }
 
 .text3 {
@@ -345,23 +460,6 @@
 
 .project-main {
     height: 300px;
-}
-
-.clear {
-    float: left;
-    background: transparent;
-    color: white;
-    font-family: 'Avenir Next';
-    font-size: 22px;
-    line-height: 44px;
-    font-weight: 400;
-    width: 200px;
-    margin-left: calc(50vw - 100px);
-    border-radius: 25px;
-    outline: none;
-    border: solid white 1px;
-    box-shadow: none;
-    cursor: pointer;
 }
 
 .border {

@@ -112,7 +112,7 @@ class Home extends React.Component {
                     <div class="container1">
                         <h1 class="text1">FRANK LUSE</h1>
                         <h2 class="text2">
-                            Software and data engineer with 2 years of experience
+                            Software and data engineer with 1.5 years of experience
                             <br></br>
                             as the lead developer at a fast-paced startup
                             </h2>
