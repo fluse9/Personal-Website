@@ -3,11 +3,14 @@ import { Navbar, Nav, Jumbotron } from 'react-bootstrap';
 import 'bootstrap/dist/js/bootstrap.bundle';
 import "./Home.css";
 import $ from 'jquery';
+import emailjs from 'emailjs-com';
 import profile from "../../Assets/images/profile.jpg";
 import website from "../../Assets/images/website.png";
 import web_app from "../../Assets/images/web app.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExternalLinkAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import GitHub from "../../Assets/logos/GitHub.svg";
+import LinkedIn from "../../Assets/logos/LinkedIn.svg";
 
 class Home extends React.Component {
     state = {
@@ -20,7 +23,27 @@ class Home extends React.Component {
     }
 
     constructor(props) {
-        super(props)
+        super(props);
+        this.nameElement = React.createRef();
+        this.emailElement = React.createRef();
+        this.messageElement = React.createRef();
+    }
+
+    sendEmail = (event) => {
+        event.preventDefault();
+
+        var templateParams = {
+            name: this.nameElement.current.value,
+            email: this.emailElement.current.value,
+            message: this.messageElement.current.value
+        }
+
+        emailjs.send('service_hzh98vr', 'template_amg52h3', templateParams, 'user_Y6SaVLeH8vY7OmLbE4wf8')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
     }
 
     setWorkplace = (workplace) => {
@@ -104,7 +127,7 @@ class Home extends React.Component {
                                 About
                             </h1>
                             <h2 class="text4">
-                                I'm Frank, a young software engineer and entrepreneur.
+                                I'm Frank, a young software engineer and entrepreneur based in Lawrence, KS. I am actively looking for software engineering and data analytics positions and am open to relocation.
                                 <br></br>
                                 <br></br>
                                 I love creating websites, applications, and real-time embedded systems that live on the internet.
@@ -156,8 +179,6 @@ class Home extends React.Component {
                        </div>
                        {this.loadExperience(this.state.workplace)}
                     </div>
-                </Jumbotron>
-                <Jumbotron className="about">
                     <div class="main-cards3">
                         <div class="card" type="portfolio">
                             <h1 class="text3">
@@ -200,11 +221,11 @@ class Home extends React.Component {
                             <h3 class="text11" style={{ marginTop: "245px", textAlign: "left" }}>
                                 React &emsp; JavaScript &emsp; HTML & CSS
                             </h3>
-                            <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#022140", marginTop: "15px", float: "left", cursor: "pointer" }}></FontAwesomeIcon>
+                            <a href="https://terrafarm.us" style={{ textDecoration: "none" }}>
+                                <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#022140", marginTop: "15px", float: "left", cursor: "pointer" }}></FontAwesomeIcon>
+                            </a>
                         </div>
                     </div>
-                </Jumbotron>
-                <Jumbotron className="about">
                     <h1 class="text3" style={{ textAlign: "center" }}>
                         Other Projects
                     </h1>
@@ -224,10 +245,95 @@ class Home extends React.Component {
                             </h3>
                         </div>
                         <div class="card" type="projects">
+                            <div class="project-main">
+                                <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                <h1 class="text12">
+                                    Stock Trading Bot
+                                </h1>
+                                <h2 class="text13">
+                                    Stock analytics tool that scrapes financial statements and analyzes signal data identify investment opportunities. Uses value, divergence, and triple momentum strategies to trade on Alpaca and Robinhood APIs.
+                                </h2>
+                            </div>
+                            <h3 class="text14">
+                                Python &emsp; Pandas &emsp; Numpy
+                            </h3>
                         </div>
                         <div class="card" type="projects">
+                            <div class="project-main">
+                                <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                <h1 class="text12">
+                                    JARVIS
+                                </h1>
+                                <h2 class="text13">
+                                    Personal assistant that uses Natural Language Toolkit and speech recognition to give the current time and weather, search wikipedia, etc. Messaging and calendar functionality coming soon.
+                                </h2>
+                            </div>
+                            <h3 class="text14">
+                                Python &emsp; NLTK
+                            </h3>
                         </div>
                         <div class="card" type="projects">
+                            <div class="project-main">
+                                <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                <h1 class="text12">
+                                    OECD Stimulus Analysis
+                                </h1>
+                                <h2 class="text13">
+                                    OLS linear regression analysis of stimulus packages across the OECD in 2020. Identified key policies responsible for varying economic performance.
+                                </h2>
+                            </div>
+                            <h3 class="text14">
+                                Stata &emsp; Excel
+                            </h3>
+                        </div>
+                        <div class="card" type="projects">
+                            <div class="project-main">
+                                <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                <h1 class="text12">
+                                    Hydroponics Controller
+                                </h1>
+                                <h2 class="text13">
+                                    Real-time embedded system running on an Arduino Uno that controls pumps, LEDs, and sensors in a DIY hydroponics system.
+                                </h2>
+                            </div>
+                            <h3 class="text14">
+                                C++ &emsp; Python &emsp; PostgreSQL
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="main-cards5">
+                        <div class="card">
+                            <h1 class="text3"  style={{ textAlign: "center" }}>
+                                Get In Touch
+                            </h1>
+                            <div class="contact-info">
+                                <h1 class="text12">
+                                    Contact Information
+                                </h1>
+                                <h2 class="text13">
+                                    <FontAwesomeIcon icon={faEnvelope} size="lg" style={{ color: "#EFF3FE", marginRight: "20px", paddingTop: "2px", float: "left", cursor: "pointer" }}></FontAwesomeIcon>
+                                    fluse9@gmail.com
+                                </h2>
+                                <a href="https://github.com/fluse9" style={{ textDecoration: "none" }}>
+                                    <h2 class="text13">
+                                        <img src={GitHub} style={{ width: "20px", marginRight: "20px", float: "left", cursor: "pointer" }}></img>
+                                        GitHub
+                                    </h2>
+                                </a>
+                                <a href="https://www.linkedin.com/in/frank-luse-a05998151/" style={{ textDecoration: "none" }}>
+                                    <h2 class="text13">
+                                        <img src={LinkedIn} style={{ width: "20px", marginRight: "20px", float: "left", cursor: "pointer" }}></img>
+                                        LinkedIn
+                                    </h2>
+                                </a>
+                            </div>
+                            <form class="contact-form" id="contact-form" onSubmit={this.sendEmail}>
+                                <input type="hidden" name="contact_number"/>
+                                <input class="contact" type="text" name="name" ref={this.nameElement} placeholder="Your name"/>
+                                <input class="contact" type="email" name="email" ref={this.emailElement} placeholder="Your email"/>
+                                <textarea class="message" name="message" ref={this.messageElement} placeholder="Please type your message here..."></textarea>
+                                <input class="send" type="submit" value="Send"/>
+                            </form>
                         </div>
                     </div>
                 </Jumbotron>

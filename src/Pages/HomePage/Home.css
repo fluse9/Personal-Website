@@ -22,6 +22,7 @@
     margin-top: 100px;
     margin-left: 27.5vw;
     margin-right: 27.5vw;
+    margin-bottom: 100px;
 }
 
 .main-cards2 {
@@ -30,6 +31,8 @@
     margin-top: 50px;
     margin-left: 27.5vw;
     margin-right: 27.5vw;
+    margin-bottom: 150px;
+    height: 400px;
 }
 
 .main-cards3 {
@@ -40,6 +43,7 @@
     margin-top: 50px;
     margin-left: 27.5vw;
     margin-right: 27.5vw;
+    margin-bottom: 150px;
 }
 
 .main-cards4 {
@@ -51,6 +55,17 @@
     margin-top: 50px;
     margin-left: 27.5vw;
     margin-right: 27.5vw;
+    margin-bottom: 200px;
+}
+
+.main-cards5 {
+    display: grid;
+    grid-template-columns: 45vw;
+    grid-template-rows: 750px;
+    margin-top: 50px;
+    margin-left: 27.5vw;
+    margin-right: 27.5vw;
+    margin-bottom: 200px;
 }
 
 .card {
@@ -517,4 +532,123 @@
     .textbox:hover {
         box-shadow: 0px 0px 3px 0px black;
         transition: 0.1s;
+    }
+
+.contact-form {
+    margin-top: 50px;
+    background: white;
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.contact {
+    width: calc(60% - 20px);
+    height: 50px;
+    margin-left: 40%;
+    background: #EFF3FE;
+    color: #022140;
+    font-family: 'Avenir Next';
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+
+    .contact::placeholder {
+        text-align: left;
+        color: #6B6B6B;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        margin: 0;
+    }
+
+.message {
+    width: calc(60% - 40px);
+    height: 200px;
+    margin-left: 40%;
+    background: #EFF3FE;
+    color: #022140;
+    font-family: 'Avenir Next';
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    resize: none;
+    border-radius: 10px;
+}
+
+    .message::-webkit-scrollbar {
+        width: 5px;
+    }
+
+        .message::-webkit-scrollbar-track-piece {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .message::-webkit-scrollbar-thumb {
+            border-radius: 100px !important;
+            background-color: #6B6B6B;
+        }
+
+        .message::-webkit-scrollbar-corner {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+        }
+
+        .message::-webkit-scrollbar-button {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+        }
+
+        .message::-webkit-resizer {
+            display: none;
+        }
+
+.send {
+    float: left;
+    margin-left: 40%;
+    width: 150px;
+    height: 50px;
+    margin-top: 15px;
+    font-family: 'Avenir Next';
+    font-size: 20px;
+    font-weight: 600;
+    color: #EFF3FE;
+    background: #022140;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    transition: 0.25s;
+}
+    .send:hover {
+        background: white;
+        color: #022140;
+        box-shadow: 0 0 3px 0 #022140;
+        cursor: pointer;
+        transition: 0.25s;
+    }
+
+.contact-info {
+    position: absolute;
+    height: 400px;
+    width: 15%;
+    background: #022140;
+    margin-top: 60px;
+    border-radius: 10px;
+}
+
+    .contact-info:hover {
+        box-shadow: 0 0 3px 0 black;
     }
