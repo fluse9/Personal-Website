@@ -169,6 +169,8 @@ class Home extends React.Component {
                             <h1 class="text3" style={{ marginBottom: "30px" }} id="experience">
                                 Experience
                             </h1>
+                        </div>
+                        <div class="card" type="experience">
                             <div class="slider-container">
                                 <span class="bar"><span class="fill"></span></span>
                                 <input type="range" min={0} max={100} value={this.state.value} class="slider" />
@@ -181,6 +183,7 @@ class Home extends React.Component {
                             </div>
                        </div>
                        {this.loadExperience(this.state.workplace)}
+
                     </div>
                     <div class="main-cards3">
                         <div class="card" type="portfolio">

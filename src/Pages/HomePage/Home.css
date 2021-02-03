@@ -44,9 +44,112 @@
         box-shadow: none;
         cursor: pointer;
     }
+
+    .main-cards1 {
+        display: grid;
+        grid-template-columns: 80vw;
+        grid-template-rows: 450px;
+        grid-column-gap: 5vw;
+        grid-row-gap: 5vh;
+        margin-top: 100px;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        margin-bottom: 100px;
+    }
+
+    .main-cards2 {
+        display: grid;
+        grid-template-columns: 80vw;
+        grid-template-rows: 50px 100px 600px;
+        margin-top: 50px;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        margin-bottom: 200px;
+        height: 400px;
+    }
+
+    .text3 {
+        text-align: left;
+        color: #022140;
+        font-family: 'Avenir Next';
+        font-size: 28px;
+        line-height: 28px;
+        font-weight: 600;
+        padding: 0;
+        margin: 0;
+    }
+
+    .text4 {
+        text-align: left;
+        color: #6B6B6B;
+        font-family: 'Avenir Next';
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+        padding-top: 20px;
+        margin: 0;
+    }
+
+    .text5 {
+        text-align: left;
+        color: black;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 600;
+        padding-top: 65px;
+        margin: 0;
+    }
+
+    .text6 {
+        text-align: left;
+        color: #6B6B6B;
+        font-family: 'Avenir Next';
+        font-size: 12px;
+        line-height: 22px;
+        font-weight: 400;
+        padding-top: 10px;
+        margin: 0;
+    }
+
+    .text7 {
+        text-align: left;
+        color: #6B6B6B;
+        font-family: 'Avenir Next';
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+        padding-top: 10px;
+        margin: 0;
+    }
+
+    .profile {
+        display: none;
+    }
+
+    .card[type="experience"]:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        height: 100%;
+        width: 100%;
+    }
+
+    .card[type="experience"]:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+        height: 100%;
+        width: 150px;
+    }
+
+    .card[type="experience"]:nth-child(3) {
+        grid-column: 1;
+        grid-row: 3;
+        height: 100%;
+        width: 100%;
+    }
 }
 
-@media only screen and (min-width: 50em) and (max-width: 84em) {
+@media only screen and (min-width: 50em) and (max-width: 62em) {
     .landing {
         position: relative;
         background: url("../../Assets/images/background.png") no-repeat center center fixed;
@@ -91,6 +194,294 @@
         border: solid white 1px;
         box-shadow: none;
         cursor: pointer;
+    }
+
+    .main-cards1 {
+        display: grid;
+        grid-template-columns: 50vw 25vw;
+        grid-template-rows: 450px;
+        grid-column-gap: 5vw;
+        grid-row-gap: 5vh;
+        margin-top: 100px;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        margin-bottom: 100px;
+    }
+
+    .main-cards2 {
+        display: grid;
+        grid-template-rows: 50px 600px;
+        grid-template-columns: 20vw 60vw;
+        margin-top: 50px;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        margin-bottom: 150px;
+        height: 400px;
+    }
+
+    .text3 {
+        text-align: left;
+        color: #022140;
+        font-family: 'Avenir Next';
+        font-size: 28px;
+        line-height: 28px;
+        font-weight: 600;
+        padding: 0;
+        margin: 0;
+    }
+
+    .text4 {
+        text-align: left;
+        color: #6B6B6B;
+        font-family: 'Avenir Next';
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+        padding-top: 20px;
+        margin: 0;
+    }
+
+    .text5 {
+        text-align: left;
+        color: black;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 600;
+        padding-top: 20px;
+        margin: 0;
+    }
+
+    .text6 {
+        text-align: left;
+        color: #6B6B6B;
+        font-family: 'Avenir Next';
+        font-size: 12px;
+        line-height: 22px;
+        font-weight: 400;
+        padding-top: 10px;
+        margin: 0;
+    }
+
+    .text7 {
+        text-align: left;
+        color: #6B6B6B;
+        font-family: 'Avenir Next';
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+        padding-top: 10px;
+        margin: 0;
+    }
+
+    .border {
+        width: 100%;
+        height: 37.5vw;
+        margin-top: 75px;
+        margin-left: 20px;
+        border-radius: 5px;
+        border: 2px solid #022140;
+        box-shadow: 0px 0px 2px 0px #022140;
+        z-index: 1;
+        transition: 0.5s;
+    }
+
+    .profile {
+        width: 100%;
+        display: block;
+        border-radius: 5px;
+        z-index: 2;
+        opacity: 0.75;
+        transition: 0.5s;
+    }
+
+    .card[type="experience"]:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        height: 100%;
+        width: 100%;
+    }
+
+    .card[type="experience"]:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+        height: 100%;
+        width: 150px;
+    }
+
+    .card[type="experience"]:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 62em) and (max-width: 84em) {
+    .landing {
+        position: relative;
+        background: url("../../Assets/images/background.png") no-repeat center center fixed;
+        background-size: 150vw;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .text1 {
+        text-align: center;
+        color: white;
+        font-family: 'GothamBold';
+        font-size: 56px;
+        line-height: 112px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .text2 {
+        text-align: center;
+        color: white;
+        font-family: 'Avenir Next';
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+    }
+
+    .clear {
+        float: left;
+        background: transparent;
+        color: white;
+        font-family: 'Avenir Next';
+        font-size: 22px;
+        line-height: 44px;
+        font-weight: 400;
+        width: 200px;
+        margin-left: calc(50vw - 100px);
+        border-radius: 25px;
+        outline: none;
+        border: solid white 1px;
+        box-shadow: none;
+        cursor: pointer;
+    }
+
+    .main-cards1 {
+        display: grid;
+        grid-template-columns: 45vw 25vw;
+        grid-template-rows: 500px;
+        grid-column-gap: 5vw;
+        grid-row-gap: 5vh;
+        margin-top: 100px;
+        margin-left: 12.5vw;
+        margin-right: 12.5vw;
+        margin-bottom: 100px;
+    }
+
+    .main-cards2 {
+        display: grid;
+        grid-template-rows: 50px 600px;
+        grid-template-columns: 15vw 60vw;
+        margin-top: 50px;
+        margin-left: 12.5vw;
+        margin-right: 12.5vw;
+        margin-bottom: 100px;
+        height: 400px;
+    }
+
+    .text3 {
+        text-align: left;
+        color: #022140;
+        font-family: 'Avenir Next';
+        font-size: 28px;
+        line-height: 28px;
+        font-weight: 600;
+        padding: 0;
+        margin: 0;
+    }
+
+    .text4 {
+        text-align: left;
+        color: #6B6B6B;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 400;
+        padding-top: 20px;
+        margin: 0;
+    }
+
+    .text5 {
+        text-align: left;
+        color: black;
+        font-family: 'Avenir Next';
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 600;
+        padding-top: 20px;
+        margin: 0;
+    }
+
+    .text6 {
+        text-align: left;
+        color: #6B6B6B;
+        font-family: 'Avenir Next';
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 400;
+        padding-top: 10px;
+        margin: 0;
+    }
+
+    .text7 {
+        text-align: left;
+        color: #6B6B6B;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        padding-top: 10px;
+        margin: 0;
+    }
+
+    .border {
+        width: 75%;
+        height: 28.125vw;
+        margin-top: 75px;
+        margin-left: 20px;
+        border-radius: 5px;
+        border: 2px solid #022140;
+        box-shadow: 0px 0px 2px 0px #022140;
+        z-index: 1;
+        transition: 0.5s;
+    }
+
+    .profile {
+        width: 100%;
+        display: block;
+        border-radius: 5px;
+        z-index: 2;
+        opacity: 0.75;
+        transition: 0.5s;
+    }
+
+    .card[type="experience"]:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        height: 100%;
+        width: 100%;
+    }
+
+    .card[type="experience"]:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+        height: 100%;
+        width: 150px;
+    }
+
+    .card[type="experience"]:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+        height: 100%;
+        width: 100%;
     }
 }
 
@@ -140,6 +531,126 @@
         box-shadow: none;
         cursor: pointer;
     }
+
+    .main-cards1 {
+        display: grid;
+        grid-template-columns: 25vw 15vw;
+        grid-template-rows: 600px;
+        grid-column-gap: 5vw;
+        grid-row-gap: 5vh;
+        margin-top: 100px;
+        margin-left: 27.5vw;
+        margin-right: 27.5vw;
+        margin-bottom: 100px;
+    }
+
+    .main-cards2 {
+        display: grid;
+        grid-template-rows: 50px 600px;
+        grid-template-columns: 10vw 30vw;
+        margin-top: 50px;
+        margin-left: 27.5vw;
+        margin-right: 27.5vw;
+        margin-bottom: 150px;
+        height: 400px;
+    }
+
+    .text3 {
+        text-align: left;
+        color: #022140;
+        font-family: 'Avenir Next';
+        font-size: 32px;
+        line-height: 32px;
+        font-weight: 600;
+        padding: 0;
+        margin: 0;
+    }
+
+    .text4 {
+        text-align: left;
+        color: #6B6B6B;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        padding-top: 20px;
+        margin: 0;
+    }
+
+    .text5 {
+        text-align: left;
+        color: black;
+        font-family: 'Avenir Next';
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 600;
+        padding-top: 20px;
+        margin: 0;
+    }
+
+    .text6 {
+        text-align: left;
+        color: #6B6B6B;
+        font-family: 'Avenir Next';
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 400;
+        padding-top: 10px;
+        margin: 0;
+    }
+
+    .text7 {
+        text-align: left;
+        color: #6B6B6B;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        padding-top: 10px;
+        margin: 0;
+    }
+
+    .border {
+        width: 100%;
+        height: 22.5vw;
+        margin-top: 75px;
+        margin-left: 20px;
+        border-radius: 5px;
+        border: 2px solid #022140;
+        box-shadow: 0px 0px 2px 0px #022140;
+        z-index: 1;
+        transition: 0.5s;
+    }
+
+    .profile {
+        width: 100%;
+        display: block;
+        border-radius: 5px;
+        z-index: 2;
+        opacity: 0.75;
+        transition: 0.5s;
+    }
+
+    .card[type="experience"]:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        height: 100%;
+        width: 100%;
+    }
+
+    .card[type="experience"]:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+        height: 100%;
+        width: 150px;
+    }
+
+    .card[type="experience"]:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+        height: 100%;
+        width: 100%;
+    }
 }
 
 .about {
@@ -147,28 +658,6 @@
     background-color: white;
     width: 100vw;
     height: 100vh;
-}
-
-.main-cards1 {
-    display: grid;
-    grid-template-columns: 25vw 15vw;
-    grid-template-rows: 47.5vh;
-    grid-column-gap: 5vw;
-    grid-row-gap: 5vh;
-    margin-top: 100px;
-    margin-left: 27.5vw;
-    margin-right: 27.5vw;
-    margin-bottom: 100px;
-}
-
-.main-cards2 {
-    display: grid;
-    grid-template-columns: 10vw 30vw;
-    margin-top: 50px;
-    margin-left: 27.5vw;
-    margin-right: 27.5vw;
-    margin-bottom: 150px;
-    height: 400px;
 }
 
 .main-cards3 {
@@ -205,7 +694,7 @@
 }
 
 .card {
-    background-color: white;
+    background-color: transparent;
 }
 
     .card[type="projects"] {
@@ -226,13 +715,6 @@
         width: 100%;
     }
 
-    .card[type="experience"]:first-child {
-        grid-column: 1;
-        grid-row: 1;
-        height: 100%;
-        width: 100%;
-    }
-
     .card[type="portfolio"]:first-child {
         grid-column: 1;
         grid-row: 1;
@@ -243,13 +725,6 @@
     .card[type="about"]:nth-child(2) {
         grid-column: 2;
         grid-row: 2;
-        height: 100%;
-        width: 100%;
-    }
-
-    .card[type="experience"]:nth-child(2) {
-        grid-column: 2;
-        grid-row: 1;
         height: 100%;
         width: 100%;
     }
@@ -273,61 +748,6 @@
     height: 400px;
     padding-top: calc(50vh - 200px);
     background: transparent;
-}
-
-.text3 {
-    text-align: left;
-    color: #022140;
-    font-family: 'Avenir Next';
-    font-size: 32px;
-    line-height: 32px;
-    font-weight: 600;
-    padding: 0;
-    margin: 0;
-}
-
-.text4 {
-    text-align: left;
-    color: #6B6B6B;
-    font-family: 'Avenir Next';
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-    padding-top: 20px;
-    margin: 0;
-}
-
-.text5 {
-    text-align: left;
-    color: black;
-    font-family: 'Avenir Next';
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 600;
-    padding-top: 65px;
-    margin: 0;
-}
-
-.text6 {
-    text-align: left;
-    color: #6B6B6B;
-    font-family: 'Avenir Next';
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: 400;
-    padding-top: 10px;
-    margin: 0;
-}
-
-.text7 {
-    text-align: left;
-    color: #6B6B6B;
-    font-family: 'Avenir Next';
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-    padding-top: 10px;
-    margin: 0;
 }
 
 .text8[type=right] {
@@ -458,41 +878,20 @@
     margin: 0;
 }
 
-.project-main {
-    height: 300px;
-}
-
-.border {
-    width: 100%;
-    height: 22.5vw;
-    margin-top: 75px;
-    margin-left: 20px;
-    border-radius: 5px;
-    border: 2px solid #022140;
-    box-shadow: 0px 0px 2px 0px #022140;
-    z-index: 1;
-    transition: 0.5s;
-}
-
     .border:hover {
         border: 1px solid #022140;
         box-shadow: 0px 0px 1px 0px #022140;
         transition: 0.5s;
     }
 
-.profile {
-    width: 100%;
-    display: block;
-    border-radius: 5px;
-    z-index: 2;
-    opacity: 0.75;
-    transition: 0.5s;
-}
-
     .profile:hover {
         opacity: 1;
         transition: 0.5s;
     }
+
+.project-main {
+    height: 300px;
+}
 
 .workplace {
     width: 125px;
@@ -515,7 +914,7 @@
 
 .slider-container {
     position: absolute;
-    margin-top: 47px;
+    margin-top: 67px;
     margin-left: -43px;
     width: 100px;
     height: 4px;
