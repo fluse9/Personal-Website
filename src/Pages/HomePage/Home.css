@@ -635,7 +635,7 @@
     .send:hover {
         background: white;
         color: #022140;
-        box-shadow: 0 0 3px 0 #022140;
+        box-shadow: 0 0 5px 0 #022140;
         cursor: pointer;
         transition: 0.25s;
     }

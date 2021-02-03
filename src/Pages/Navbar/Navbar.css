@@ -6,9 +6,16 @@
     overflow: hidden;
 }
 
+.brand-container {
+    width: 10%;
+    margin-left: 0;
+}
+
 .nav-item-container {
+    width: 80%;
     text-align: center;
     margin-top: -40px;
+    margin-left: 10%;
 }
 
     .nav-list {
@@ -16,25 +23,36 @@
         display: inline;
     }
 
-.nav-item {
-    display: inline;
-    padding-left: 20px;
-    padding-right: 20px;
+    .nav-item {
+        display: inline;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+        .nav-item>a {
+            font-size: 16px;
+            color: white;
+            font-family: 'Avenir Next';
+            font-weight: 400;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+            .nav-item>a:hover {
+                font-size: 18px;
+                transition: 0.5s;
+            }
+
+.social-container {
+    margin-top: -20px;
+    width: 10%;
+    margin-left: 100%;
 }
 
-.nav-item>a {
-    font-size: 16px;
-    color: white;
-    font-family: 'Avenir Next';
-    font-weight: 400;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-    .nav-item>a:hover {
-        font-size: 18px;
-        transition: 0.5s;
+    .social-item {
+        float: right;
+        display: inline;
     }
 
 .header1 {

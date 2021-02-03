@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import GitHub from "../../Assets/logos/GitHub.svg";
 import LinkedIn from "../../Assets/logos/LinkedIn.svg";
+import { Link, Scroll } from 'react-scroll';
 
 class Home extends React.Component {
     state = {
@@ -116,14 +117,16 @@ class Home extends React.Component {
                             as the lead developer at a fast-paced startup
                             </h2>
                     </div>
-                    <button class="clear">
-                        <a class="learn-more">Learn More</a>
-                    </button>
+                    <Link activeClass="active" to="about" spy={true} smooth={true} offset={-70} duration={1000}>
+                        <button class="clear">
+                            <a class="learn-more">Learn More</a>
+                        </button>
+                    </Link>
                 </Jumbotron>
                 <Jumbotron className="about">
                     <div class="main-cards1">
                         <div class="card" type="about">
-                            <h1 class="text3">
+                            <h1 class="text3" id="about">
                                 About
                             </h1>
                             <h2 class="text4">
@@ -163,7 +166,7 @@ class Home extends React.Component {
                     </div>
                     <div class="main-cards2">
                         <div class="card" type="experience">
-                            <h1 class="text3" style={{ marginBottom: "30px" }}>
+                            <h1 class="text3" style={{ marginBottom: "30px" }} id="experience">
                                 Experience
                             </h1>
                             <div class="slider-container">
@@ -181,7 +184,7 @@ class Home extends React.Component {
                     </div>
                     <div class="main-cards3">
                         <div class="card" type="portfolio">
-                            <h1 class="text3">
+                            <h1 class="text3" id="portfolio">
                                 Portfolio
                             </h1>
                         </div>
@@ -215,7 +218,7 @@ class Home extends React.Component {
                             <div class="textbox" type="left">
                                 <h1 class="text10" type="left">
                                 Terrafarm's eCommerce website which contains information about the company and its products.
-                                Customers can order the Terrafarm 1 and any supplies they need to grow fresh fruits and vegetables, such as nutrients and seed pods .
+                                Customers can order the Terrafarm 1 and any supplies they need to grow fresh fruits and vegetables, such as nutrients and seed pods.
                                 </h1>
                             </div>
                             <h3 class="text11" style={{ marginTop: "245px", textAlign: "left" }}>
@@ -226,13 +229,15 @@ class Home extends React.Component {
                             </a>
                         </div>
                     </div>
-                    <h1 class="text3" style={{ textAlign: "center" }}>
+                    <h1 class="text3" style={{ textAlign: "center" }} id="projects">
                         Other Projects
                     </h1>
                     <div class="main-cards4">
                         <div class="card" type="projects">
                             <div class="project-main">
-                                <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                <a href="https://github.com/fluse9/Personal-Website" style={{ textDecoration: "none" }}>
+                                    <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                </a>
                                 <h1 class="text12">
                                     Personal Website
                                 </h1>
@@ -246,9 +251,11 @@ class Home extends React.Component {
                         </div>
                         <div class="card" type="projects">
                             <div class="project-main">
-                                <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                <a href="https://github.com/fluse9/Investment-Bot" style={{ textDecoration: "none" }}>
+                                    <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                </a>
                                 <h1 class="text12">
-                                    Stock Trading Bot
+                                    Investment Bot
                                 </h1>
                                 <h2 class="text13">
                                     Stock analytics tool that scrapes financial statements and analyzes signal data identify investment opportunities. Uses value, divergence, and triple momentum strategies to trade on Alpaca and Robinhood APIs.
@@ -260,7 +267,9 @@ class Home extends React.Component {
                         </div>
                         <div class="card" type="projects">
                             <div class="project-main">
-                                <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                <a href="https://github.com/fluse9/JARVIS" style={{ textDecoration: "none" }}>
+                                    <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                </a>
                                 <h1 class="text12">
                                     JARVIS
                                 </h1>
@@ -274,7 +283,9 @@ class Home extends React.Component {
                         </div>
                         <div class="card" type="projects">
                             <div class="project-main">
-                                <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                <a href="https://github.com/fluse9/Stimulus-Analysis-2020" style={{ textDecoration: "none" }}>
+                                    <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                </a>
                                 <h1 class="text12">
                                     OECD Stimulus Analysis
                                 </h1>
@@ -288,7 +299,9 @@ class Home extends React.Component {
                         </div>
                         <div class="card" type="projects">
                             <div class="project-main">
-                                <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                <a href="https://github.com/fluse9/Autofarm-OS" style={{ textDecoration: "none" }}>
+                                    <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#EFF3FE", marginTop: "20px", marginRight: "20px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
+                                </a>
                                 <h1 class="text12">
                                     Hydroponics Controller
                                 </h1>
@@ -303,7 +316,7 @@ class Home extends React.Component {
                     </div>
                     <div class="main-cards5">
                         <div class="card">
-                            <h1 class="text3"  style={{ textAlign: "center" }}>
+                            <h1 class="text3"  style={{ textAlign: "center" }} id="contact">
                                 Get In Touch
                             </h1>
                             <div class="contact-info">
