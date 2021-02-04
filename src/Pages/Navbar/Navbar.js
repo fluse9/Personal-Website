@@ -39,7 +39,7 @@ class PersonalNavbar extends React.Component {
         return (
             <Navbar class="nav">
                 <div class="brand-container">
-                    <a class="drop-button" onClick={() => {this.showModal()}} type="nav" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="menu" onClick={() => {this.showModal()}} type="nav" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <FontAwesomeIcon icon={faBars} size="lg" style={{ color: "white", marginLeft: "20px", marginTop: "15px", float: "left", cursor: "pointer" }}></FontAwesomeIcon>
                     </a>
                     <Modal
@@ -50,7 +50,7 @@ class PersonalNavbar extends React.Component {
                         animationType={"slide"}
                     >
                         <div class="modal-main">
-                            <i class="fa fa-times fa-lg" style={{ float: "right", marginRight: "27.5px", marginTop: "25px", color: "#232323", cursor: "pointer" }} onClick={() => {this.hideModal()}}></i>
+                            <i class="fa fa-times fa-lg" style={{ float: "right", marginRight: "-5vw", marginTop: "20px", color: "#232323", cursor: "pointer" }} onClick={() => {this.hideModal()}}></i>
                             <ul class="modal-list">
                                 <li class="modal-item">
                                     <Link activeClass="active" to="about" spy={true} smooth={true} offset={-70} duration={1000} onClick={() => this.hideModal()}>
