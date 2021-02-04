@@ -16,11 +16,14 @@
 
     .brand-container {
         float: left;
+    }
+
+    .brand {
         display: none;
     }
 
     .social-container {
-        margin-right: 20px;
+        margin-right: 0px;
         margin-top: 15px;
         float: right;
     }
@@ -29,6 +32,36 @@
         font-size: 0px;
         visibility: hidden;
         display: none;
+    }
+
+    .modal-backdrop {
+        width: 100vw;
+        height: 100vh;
+        background: white;
+        margin: 0;
+        margin-top: -30px;
+        padding: 10px;
+    }
+
+    .modal-main {
+        background: white;
+    }
+
+    .modal-list {
+        padding-top: 50px;
+        list-style: none;
+    }
+
+    .modal-item {
+        width: 80vw;
+        font-family: 'Avenir Next';
+        color: black;
+        font-size: 18px;
+        font-weight: 400;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #6B6B6B;
+        cursor: pointer;
     }
 }
 
