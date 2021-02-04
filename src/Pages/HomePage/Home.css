@@ -64,7 +64,7 @@
         margin-top: 50px;
         margin-left: 10vw;
         margin-right: 10vw;
-        margin-bottom: 200px;
+        margin-bottom: 250px;
         height: 400px;
     }
 
@@ -76,7 +76,29 @@
         margin-top: 50px;
         margin-left: 10vw;
         margin-right: 10vw;
+        margin-bottom: 100px;
+    }
+
+    .main-cards4 {
+        display: grid;
+        grid-template-columns: 40w 40w;
+        grid-template-rows: 350px 350px;
+        grid-row-gap: 6.67px;
+        grid-column-gap: 15px;
+        margin-top: 50px;
+        margin-left: 10vw;
+        margin-right: 10vw;
         margin-bottom: 150px;
+    }
+
+    .main-cards5 {
+        display: grid;
+        grid-template-columns: 80vw;
+        grid-template-rows: 750px;
+        margin-top: 50px;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        margin-bottom: 200px;
     }
 
     .card[type="experience"]:first-child {
@@ -270,7 +292,8 @@
         z-index: 2;
     }
 
-    .text11 {
+    .text11[type="right"] {
+        position: relative;
         color: #6B6B6B;
         font-family: 'Avenir Next';
         font-size: 14px;
@@ -278,6 +301,23 @@
         font-weight: 400;
         padding: 0;
         margin: 0;
+        padding-top: 20px;
+        width: 80vw;
+        z-index: 2;
+    }
+
+    .text11[type="left"] {
+        position: relative;
+        color: #6B6B6B;
+        font-family: 'Avenir Next';
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 400;
+        padding: 0;
+        margin: 0;
+        margin-top: 175px !important;
+        padding-top: 20px;
+        width: 80vw;
         z-index: 2;
     }
 
@@ -288,6 +328,77 @@
         transition: 0.5s;
         border-radius: 10px;
         z-index: 2
+    }
+
+    .contact-info {
+        float: left;
+        height: 400px;
+        width: 75%;
+        background: #022140;
+        margin-top: 60px;
+        margin-left: 12.5%;
+        border-radius: 10px;
+    }
+
+    .contact-form {
+        margin-top: 50px;
+        background: white;
+        width: 80vw;
+        height: 500px;
+        margin-left: 10vw;
+        padding-top: 450px;
+        border-radius: 10px;
+    }
+
+    .contact {
+        width: 56vw;
+        height: 50px;
+        background: #EFF3FE;
+        color: #022140;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        border-radius: 10px;
+    }
+
+    .message {
+        width: 52.5vw;
+        height: 200px;
+        background: #EFF3FE;
+        color: #022140;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 20px;
+        resize: none;
+        border-radius: 10px;
+    }
+
+    .send {
+        width: 30vw;
+        height: 50px;
+        margin-top: 15px;
+        margin-left: 15vw;
+        font-family: 'Avenir Next';
+        font-size: 20px;
+        font-weight: 600;
+        color: #EFF3FE;
+        background: #022140;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        transition: 0.25s;
     }
 }
 
@@ -370,6 +481,28 @@
         margin-left: 10vw;
         margin-right: 10vw;
         margin-bottom: 150px;
+    }
+
+    .main-cards4 {
+        display: grid;
+        grid-template-columns: 40w 40w;
+        grid-template-rows: 350px 350px;
+        grid-row-gap: 6.67px;
+        grid-column-gap: 15px;
+        margin-top: 50px;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        margin-bottom: 200px;
+    }
+
+    .main-cards5 {
+        display: grid;
+        grid-template-columns: 800px;
+        grid-template-rows: 750px;
+        margin-top: 50px;
+        margin-left: calc(50vw - 400px);
+        margin-right: calc(50vw - 400px);
+        margin-bottom: 200px;
     }
 
     .card[type="experience"]:first-child {
@@ -612,6 +745,77 @@
             opacity: 1;
             transition: 0.5s;
         }
+
+    .contact-info {
+        position: absolute;
+        height: 400px;
+        width: 275px;
+        background: #022140;
+        margin-top: 60px;
+        border-radius: 10px;
+    }
+
+    .contact-form {
+        margin-top: 50px;
+        background: white;
+        width: 100%;
+        height: 500px;
+        border-radius: 10px;
+    }
+
+    .contact {
+        width: calc(60% - 20px);
+        height: 50px;
+        margin-left: 40%;
+        background: #EFF3FE;
+        color: #022140;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        border-radius: 10px;
+    }
+
+    .message {
+        width: calc(60% - 40px);
+        height: 200px;
+        margin-left: 40%;
+        background: #EFF3FE;
+        color: #022140;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 20px;
+        resize: none;
+        border-radius: 10px;
+    }
+
+    .send {
+        float: left;
+        margin-left: 40%;
+        width: 150px;
+        height: 50px;
+        margin-top: 15px;
+        font-family: 'Avenir Next';
+        font-size: 20px;
+        font-weight: 600;
+        color: #EFF3FE;
+        background: #022140;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        transition: 0.25s;
+    }
 }
 
 @media only screen and (min-width: 62em) and (max-width: 84em) {
@@ -695,6 +899,28 @@
         margin-bottom: 150px;
     }
 
+    .main-cards4 {
+        display: grid;
+        grid-template-columns: 260px 260px 260px;
+        grid-template-rows: 350px 350px;
+        grid-row-gap: 6.67px;
+        grid-column-gap: 15px;
+        margin-top: 50px;
+        margin-left: calc(50vw - 400px);
+        margin-right: calc(50vw - 400px);
+        margin-bottom: 200px;
+    }
+
+    .main-cards5 {
+        display: grid;
+        grid-template-columns: 800px;
+        grid-template-rows: 750px;
+        margin-top: 50px;
+        margin-left: calc(50vw - 400px);
+        margin-right: calc(50vw - 400px);
+        margin-bottom: 200px;
+    }
+
     .card[type="experience"]:first-child {
         grid-column: 1;
         grid-row: 1;
@@ -935,6 +1161,77 @@
             opacity: 1;
             transition: 0.5s;
         }
+
+    .contact-info {
+        position: absolute;
+        height: 400px;
+        width: 275px;
+        background: #022140;
+        margin-top: 60px;
+        border-radius: 10px;
+    }
+
+    .contact-form {
+        margin-top: 50px;
+        background: white;
+        width: 100%;
+        height: 500px;
+        border-radius: 10px;
+    }
+
+    .contact {
+        width: calc(60% - 20px);
+        height: 50px;
+        margin-left: 40%;
+        background: #EFF3FE;
+        color: #022140;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        border-radius: 10px;
+    }
+
+    .message {
+        width: calc(60% - 40px);
+        height: 200px;
+        margin-left: 40%;
+        background: #EFF3FE;
+        color: #022140;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 20px;
+        resize: none;
+        border-radius: 10px;
+    }
+
+    .send {
+        float: left;
+        margin-left: 40%;
+        width: 150px;
+        height: 50px;
+        margin-top: 15px;
+        font-family: 'Avenir Next';
+        font-size: 20px;
+        font-weight: 600;
+        color: #EFF3FE;
+        background: #022140;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        transition: 0.25s;
+    }
 }
 
 @media only screen and (min-width: 84em) {
@@ -1018,6 +1315,28 @@
         margin-bottom: 150px;
     }
 
+    .main-cards4 {
+        display: grid;
+        grid-template-columns: 260px 260px 260px;
+        grid-template-rows: 350px 350px;
+        grid-row-gap: 6.67px;
+        grid-column-gap: 15px;
+        margin-top: 50px;
+        margin-left: calc(50vw - 400px);
+        margin-right: calc(50vw - 400px);
+        margin-bottom: 200px;
+    }
+
+    .main-cards5 {
+        display: grid;
+        grid-template-columns: 800px;
+        grid-template-rows: 750px;
+        margin-top: 50px;
+        margin-left: calc(50vw - 400px);
+        margin-right: calc(50vw - 400px);
+        margin-bottom: 200px;
+    }
+
     .card[type="experience"]:first-child {
         grid-column: 1;
         grid-row: 1;
@@ -1258,6 +1577,77 @@
             opacity: 1;
             transition: 0.5s;
         }
+
+    .contact-info {
+        position: absolute;
+        height: 400px;
+        width: 275px;
+        background: #022140;
+        margin-top: 60px;
+        border-radius: 10px;
+    }
+
+    .contact-form {
+        margin-top: 50px;
+        background: white;
+        width: 100%;
+        height: 500px;
+        border-radius: 10px;
+    }
+
+    .contact {
+        width: calc(60% - 20px);
+        height: 50px;
+        margin-left: 40%;
+        background: #EFF3FE;
+        color: #022140;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        border-radius: 10px;
+    }
+
+    .message {
+        width: calc(60% - 40px);
+        height: 200px;
+        margin-left: 40%;
+        background: #EFF3FE;
+        color: #022140;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 20px;
+        resize: none;
+        border-radius: 10px;
+    }
+
+    .send {
+        float: left;
+        margin-left: 40%;
+        width: 150px;
+        height: 50px;
+        margin-top: 15px;
+        font-family: 'Avenir Next';
+        font-size: 20px;
+        font-weight: 600;
+        color: #EFF3FE;
+        background: #022140;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        transition: 0.25s;
+    }
 }
 
 .about {
@@ -1265,28 +1655,6 @@
     background-color: white;
     width: 100vw;
     height: 100vh;
-}
-
-.main-cards4 {
-    display: grid;
-    grid-template-columns: calc(15vw - 10px) calc(15vw - 10px) calc(15vw - 10px);
-    grid-template-rows: 350px 350px;
-    grid-row-gap: 15px;
-    grid-column-gap: 15px;
-    margin-top: 50px;
-    margin-left: 27.5vw;
-    margin-right: 27.5vw;
-    margin-bottom: 200px;
-}
-
-.main-cards5 {
-    display: grid;
-    grid-template-columns: 45vw;
-    grid-template-rows: 750px;
-    margin-top: 50px;
-    margin-left: 27.5vw;
-    margin-right: 27.5vw;
-    margin-bottom: 200px;
 }
 
 .card {
@@ -1483,32 +1851,6 @@
         transition: 0.1s;
     }
 
-.contact-form {
-    margin-top: 50px;
-    background: white;
-    width: 100%;
-    height: 500px;
-    border-radius: 10px;
-}
-
-.contact {
-    width: calc(60% - 20px);
-    height: 50px;
-    margin-left: 40%;
-    background: #EFF3FE;
-    color: #022140;
-    font-family: 'Avenir Next';
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 500;
-    border: none;
-    outline: none;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    border-radius: 10px;
-}
-
     .contact::placeholder {
         text-align: left;
         color: #6B6B6B;
@@ -1518,25 +1860,6 @@
         font-weight: 500;
         margin: 0;
     }
-
-.message {
-    width: calc(60% - 40px);
-    height: 200px;
-    margin-left: 40%;
-    background: #EFF3FE;
-    color: #022140;
-    font-family: 'Avenir Next';
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 500;
-    border: none;
-    outline: none;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    padding: 20px;
-    resize: none;
-    border-radius: 10px;
-}
 
     .message::-webkit-scrollbar {
         width: 5px;
@@ -1565,22 +1888,6 @@
             display: none;
         }
 
-.send {
-    float: left;
-    margin-left: 40%;
-    width: 150px;
-    height: 50px;
-    margin-top: 15px;
-    font-family: 'Avenir Next';
-    font-size: 20px;
-    font-weight: 600;
-    color: #EFF3FE;
-    background: #022140;
-    border: none;
-    outline: none;
-    border-radius: 10px;
-    transition: 0.25s;
-}
     .send:hover {
         background: white;
         color: #022140;
@@ -1588,15 +1895,6 @@
         cursor: pointer;
         transition: 0.25s;
     }
-
-.contact-info {
-    position: absolute;
-    height: 400px;
-    width: 15%;
-    background: #022140;
-    margin-top: 60px;
-    border-radius: 10px;
-}
 
     .contact-info:hover {
         box-shadow: 0 0 3px 0 black;

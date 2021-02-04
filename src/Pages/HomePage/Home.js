@@ -205,13 +205,15 @@ class Home extends React.Component {
                                 Users select crops to plant and harvest, the farm's climate and nutrient solution, control LED brightness, and leave valuable feedback on each harvest.
                                 </h1>
                             </div>
-                            <h2 class="text11" style={{ marginTop: "245px", textAlign: "right" }}>
+                            <h2 class="text11" type="right" style={{ marginTop: "245px", textAlign: "right" }}>
                                 React &emsp; Node.js &emsp; GraphQL &emsp; PostgreSQL
                             </h2>
                             <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#022140", marginTop: "15px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
                         </div>
                         <div class="card" type="portfolio">
-                            <div class="overlay" type="right"><img src={website} alt="website" class="feature"></img></div>
+                            <a href="https://terrafarm.us" style={{ textDecoration: "none" }}>
+                                <div class="overlay" type="right"><img src={website} alt="website" class="feature"></img></div>
+                            </a>
                             <h1 class="text8" type="left">
                                 Featured Work
                             </h1>
@@ -224,7 +226,7 @@ class Home extends React.Component {
                                 Customers can order the Terrafarm 1 and any supplies they need to grow fresh fruits and vegetables, such as nutrients and seed pods.
                                 </h1>
                             </div>
-                            <h3 class="text11" style={{ marginTop: "245px", textAlign: "left" }}>
+                            <h3 class="text11" type="left" style={{ marginTop: "245px", textAlign: "left" }}>
                                 React &emsp; JavaScript &emsp; HTML & CSS
                             </h3>
                             <a href="https://terrafarm.us" style={{ textDecoration: "none" }}>
@@ -261,7 +263,7 @@ class Home extends React.Component {
                                     Investment Bot
                                 </h1>
                                 <h2 class="text13">
-                                    Stock analytics tool that scrapes financial statements and analyzes signal data identify investment opportunities. Uses value, divergence, and triple momentum strategies to trade on Alpaca and Robinhood APIs.
+                                    Stock analytics tool that scrapes financial statements and signal data to identify investment opportunities. Uses value, divergence, and triple momentum strategies to trade on Alpaca & Robinhood APIs.
                                 </h2>
                             </div>
                             <h3 class="text14">
