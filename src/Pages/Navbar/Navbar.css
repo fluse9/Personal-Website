@@ -1,7 +1,7 @@
 @media only screen and (max-width: 31.33em) {
     .navbar {
         background: url("../../Assets/images/background.png") no-repeat center center fixed;
-        background-size: 250vw;
+        background-size: 275vw;
         width: 100vw;
         height: 50px;
         overflow: hidden;

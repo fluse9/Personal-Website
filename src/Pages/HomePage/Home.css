@@ -2,7 +2,7 @@
     .landing {
         position: relative;
         background: url("../../Assets/images/background.png") no-repeat center center fixed;
-        background-size: 250vw;
+        background-size: 275vw;
         width: 100vw;
         height: 100vh;
     }
