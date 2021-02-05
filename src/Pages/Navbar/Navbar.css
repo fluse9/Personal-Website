@@ -8,10 +8,7 @@
     }
 
     .header1 {
-        font-size: 14px;
-        color: white;
-        font-family: 'Avenir Next';
-        font-weight: 400;
+        display: none;
     }
 
     .brand-container {
