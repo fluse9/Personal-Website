@@ -202,7 +202,7 @@ class Home extends React.Component {
                             <div class="textbox" type="right">
                                 <h1 class="text10" type="right">
                                 A web application that allows customers to monitor and manage their Terrafarm.
-                                Users select crops to plant and harvest, the farm's climate and nutrient solution, control LED brightness, and leave valuable feedback on each harvest.
+                                Users select crops to plant and harvest, the farm's climate and nutrient solution, control LED brightness, and leave valuable feedback.
                                 </h1>
                             </div>
                             <h2 class="text11" type="right" style={{ marginTop: "245px", textAlign: "right" }}>
@@ -223,7 +223,7 @@ class Home extends React.Component {
                             <div class="textbox" type="left">
                                 <h1 class="text10" type="left">
                                 Terrafarm's eCommerce website which contains information about the company and its products.
-                                Customers can order the Terrafarm 1 and any supplies they need to grow fresh fruits and vegetables, such as nutrients and seed pods.
+                                Customers can order the Terrafarm 1 and any supplies they need to grow fresh fruits and vegetables.
                                 </h1>
                             </div>
                             <h3 class="text11" type="left" style={{ marginTop: "245px", textAlign: "left" }}>
