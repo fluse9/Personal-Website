@@ -402,6 +402,44 @@
     }
 }
 
+@media only screen and (max-width: 24em) {
+    .main-cards1 {
+        margin-bottom: 200px;
+    }
+
+    .main-cards2 {
+        margin-bottom: 350px;
+    }
+
+    .text8[type=left] {
+        font-size: 12px;
+        line-height: 2opx;
+    }
+
+    .text8[type=right] {
+        font-size: 12px;
+        line-height: 2opx;
+    }
+
+    .text9[type=left] {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .text9[type=right] {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .text10[type=left] {
+        font-size: 12px;
+    }
+
+    .text10[type=right] {
+        font-size: 12px;
+    }
+}
+
 @media only screen and (min-width: 31.33em) and (max-width: 50em) {
     .landing {
         position: relative;
@@ -2235,8 +2273,8 @@
             background: #022140; /* Green background */
             border-radius: 25px;
             box-shadow: none;
-            margin-top: -17px;
-            margin-left: 2x;
+            margin-top: -15px;
+            margin-left: 0px;
         }
 
 .overlay[type=profile] {
