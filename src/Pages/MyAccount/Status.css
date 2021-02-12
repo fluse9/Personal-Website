@@ -626,7 +626,7 @@
         margin-top: 84px !important;
         background-color: #F2F2F2;
         border: 0;
-        width: 10px;
+        width: 20px;
         height: 20px;
         border: 1px solid #232323;
         border-radius: 100px;
@@ -773,7 +773,7 @@
         margin-top: 84px !important;
         background-color: #F2F2F2;
         border: 0;
-        width: 10px;
+        width: 20px;
         height: 20px;
         border: 1px solid #232323;
         border-radius: 100px;
@@ -919,7 +919,7 @@
         margin-top: 84px !important;
         background-color: #F2F2F2;
         border: 0;
-        width: 10px;
+        width: 20px;
         height: 20px;
         border: 1px solid #232323;
         border-radius: 100px;
@@ -1033,11 +1033,11 @@
 
 .button[type=small-white-climate] {
     position: absolute;
-    margin-left: -115px;
-    margin-top: 157px !important;
+    margin-left: -215px;
+    margin-top: 159px !important;
     background-color: #F2F2F2;
     border: 0;
-    width: 10px;
+    width: 20px;
     height: 20px;
     border: 1px solid #232323;
     border-radius: 100px;
