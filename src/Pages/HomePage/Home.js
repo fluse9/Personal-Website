@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navbar, Nav, Jumbotron } from 'react-bootstrap';
-import 'bootstrap/dist/js/bootstrap.bundle';
 import "./Home.css";
 import $ from 'jquery';
 import emailjs from 'emailjs-com';
@@ -12,6 +11,7 @@ import { faExternalLinkAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons
 import GitHub from "../../Assets/logos/GitHub.svg";
 import LinkedIn from "../../Assets/logos/LinkedIn.svg";
 import { Link, Scroll } from 'react-scroll';
+import PersonalNavbar from '../../Pages/Navbar/Navbar.js';
 
 class Home extends React.Component {
     state = {
@@ -108,6 +108,7 @@ class Home extends React.Component {
     render () {
         return (
             <React.Fragment>
+                <PersonalNavbar />
                 <Jumbotron className="landing">
                     <div class="container1">
                         <h1 class="text1">FRANK LUSE</h1>
@@ -171,7 +172,7 @@ class Home extends React.Component {
                             </h1>
                         </div>
                         <div class="card" type="experience">
-                            <div class="slider-container">
+                            <div class="slider-container-home">
                                 <span class="bar"><span class="fill"></span></span>
                                 <input type="range" min={0} max={100} value={this.state.value} class="slider" />
                             </div>

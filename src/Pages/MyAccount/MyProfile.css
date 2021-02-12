@@ -1,0 +1,1172 @@
+.myprofile-body {
+    background: #ECECED;
+}
+
+@media only screen and (max-width: 34em) {
+    .main-cards[type=myprofile] {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 85vw;
+        grid-template-rows: 900px 900px 900px;
+    }
+
+    .card[type=myprofile]:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        height: 900px;
+        width: 300px;
+        margin-left: calc(60% - 150px);
+        border-radius: 50px;
+        align-items: center;
+    }
+
+    .card[type=myprofile]:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+        height: 800px;
+        width: 100%;
+        border-radius: 0 50px 50px 50px;
+        top: 100px;
+        align-items: flex-start;
+    }
+
+    .card[type=myprofile]:nth-child(3) {
+        grid-column: 1;
+        grid-row: 3;
+        height: 700px;
+        border-radius: 0 50px 50px 50px;
+        width: 100%;
+        top: 100px;
+        align-items: flex-start;
+    }
+
+    .card[type=myprofile] h1 {
+        text-align: center;
+        font-family: GothamBold;
+        font-size: 22px;
+        color: #409C7B;
+        line-height: 34px;
+        margin-left: 0px;
+        padding-top: 20px;
+    }
+
+    .card[type=myprofile] h2 {
+        text-align: left;
+        font-family: GothamBold;
+        font-size: 22px;
+        color: #232323;
+        line-height: 34px;
+        margin-left: 0px;
+        margin-top: 180px;
+        padding-top: 10px;
+    }
+
+    .card[type=myprofile] h3 {
+        text-align: left;
+        font-family: 'Avenir Next';
+        font-weight: 500;
+        font-size: 16px;
+        color: #949494;
+        line-height: 28px;
+        padding-top: 10px;
+        margin-top: -20px;
+    }
+
+    .card[type=myprofile] h4 {
+        position: absolute;
+        text-align: center;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 32px;
+        border: none;
+        margin-top: -85px;
+    }
+
+    .card[type=myprofile] h5 {
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 18px !important;
+        border: none;
+        padding-top: 25px;
+    }
+
+    .card[type=myprofile] h5[type=state] {
+        position: absolute;
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 18px !important;
+        border: none;
+        padding-top: 25px;
+        margin-left: 36%;
+        margin-top: 295px;
+    }
+
+    .card[type=myprofile] h5[type=zip] {
+        position: absolute;
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 18px !important;
+        border: none;
+        padding-top: 25px;
+        margin-left: 60%;
+        margin-top: 295px;
+    }
+
+    .card[type=myprofile] h6 {
+        text-align: left;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #696969 !important;
+        font-size: 18px;
+        border: none;
+        padding-top: 30px;
+    }
+
+    .myprofile-info {
+        position: relative;
+        width: 95%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 16px;
+        border: none;
+        margin-left: 0px;
+        margin-top: 0px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .myprofile-info[type=city] {
+        position: relative;
+        width: 35%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 16px;
+        border: none;
+        margin-left: 0px;
+        margin-top: 5px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .myprofile-info[type=state] {
+        position: relative;
+        width: 20%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 16px;
+        border: none;
+        margin-left: 45%;
+        margin-top: -45px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .myprofile-info[type=zip] {
+        position: relative;
+        width: 20%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 16px;
+        border: none;
+        margin-left: 75%;
+        margin-top: -45px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .drop-button[type=myprofile] {
+        float: left;
+        width: 60vw !important;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        text-align: left;
+        text-indent: 20px;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        font-size: 20px;
+        background-color: #F2F2F2;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: #232323 !important;
+    }
+
+    .toggle-container {
+        position: relative;
+        margin-left: 75%;
+        margin-top: -70px;
+    }
+
+    .dropdown-menu[type=myprofile] {
+        position: relative;
+        text-indent: 0px;
+        width: 60.2vw !important;
+        padding: 7.5px;
+        margin-top: 0px !important;
+        padding-bottom: 20px;
+        border-radius: 0 0 25px 25px;
+        background-color: #F2F2F2;
+        outline: none !important;
+        border: none !important;
+        box-shadow: 0 0 5px #DE5E3B !important;
+    }
+}
+
+@media only screen and (min-width: 34em) and (max-width: 60em) {
+    .main-cards[type=myprofile] {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 85%;
+        grid-template-rows: 900px 900px 900px;
+    }
+
+    .card[type=myprofile]:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        height: 900px;
+        width: 300px;
+        margin-left: calc(60% - 150px);
+        border-radius: 50px;
+        align-items: center;
+    }
+
+    .card[type=myprofile]:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+        height: 800px;
+        width: 100%;
+        margin-left: 5%;
+        border-radius: 0 50px 50px 50px;
+        top: 100px;
+        align-items: flex-start;
+    }
+
+    .card[type=myprofile]:nth-child(3) {
+        grid-column: 1;
+        grid-row: 3;
+        height: 700px;
+        border-radius: 0 50px 50px 50px;
+        width: 100%;
+        margin-left: 5%;
+        top: 100px;
+        align-items: flex-start;
+    }
+
+    .card[type=myprofile] h1 {
+        text-align: center;
+        font-family: GothamBold;
+        font-size: 22px;
+        color: #409C7B;
+        line-height: 34px;
+        margin-left: 0px;
+        padding-top: 20px;
+    }
+
+    .card[type=myprofile] h2 {
+        text-align: left;
+        font-family: GothamBold;
+        font-size: 22px;
+        color: #232323;
+        line-height: 34px;
+        margin-left: 0px;
+        margin-top: 180px;
+        padding-top: 10px;
+    }
+
+    .card[type=myprofile] h3 {
+        text-align: left;
+        font-family: 'Avenir Next';
+        font-weight: 500;
+        font-size: 16px;
+        color: #949494;
+        line-height: 28px;
+        padding-top: 10px;
+        margin-top: -20px;
+    }
+
+    .card[type=myprofile] h4 {
+        position: absolute;
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 36px;
+        border: none;
+        margin-left: -50px;
+        margin-top: -85px;
+    }
+
+    .card[type=myprofile] h5 {
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 28px;
+        border: none;
+        padding-top: 5px;
+    }
+
+    .card[type=myprofile] h5[type=state] {
+        position: absolute;
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 28px !important;
+        border: none;
+        padding-top: 25px;
+        margin-left: 36%;
+        margin-top: 270px;
+    }
+
+    .card[type=myprofile] h5[type=zip] {
+        position: absolute;
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 28px !important;
+        border: none;
+        padding-top: 25px;
+        margin-left: 60%;
+        margin-top: 270px;
+    }
+
+    .card[type=myprofile] h6 {
+        text-align: left;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #696969 !important;
+        font-size: 20px;
+        border: none;
+        padding-top: 30px;
+    }
+
+    .myprofile-info {
+        position: relative;
+        width: 95%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 20px;
+        border: none;
+        margin-left: 0px;
+        margin-top: 0px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .myprofile-info[type=city] {
+        position: relative;
+        width: 35%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 20px;
+        border: none;
+        margin-left: 0px;
+        margin-top: 5px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .myprofile-info[type=state] {
+        position: relative;
+        width: 20%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 20px;
+        border: none;
+        margin-left: 45%;
+        margin-top: -50px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .myprofile-info[type=zip] {
+        position: relative;
+        width: 20%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 20px;
+        border: none;
+        margin-left: 75%;
+        margin-top: -50px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .drop-button[type=myprofile] {
+        float: left;
+        width: 350px !important;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        text-align: left;
+        text-indent: 20px;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        font-size: 20px;
+        background-color: #F2F2F2;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: #232323 !important;
+    }
+
+    .toggle-container {
+        position: relative;
+        margin-left: 75%;
+        margin-top: -70px;
+    }
+
+    .dropdown-menu[type=myprofile] {
+        position: relative;
+        text-indent: 0px;
+        width: 350px !important;
+        padding: 7.5px;
+        margin-top: 0px !important;
+        padding-bottom: 20px;
+        border-radius: 0 0 25px 25px;
+        background-color: #F2F2F2;
+        outline: none !important;
+        border: none !important;
+        box-shadow: 0 0 5px #DE5E3B !important;
+    }
+}
+
+@media only screen and (min-width: 60em) and (max-width: 115em) {
+    .main-cards[type=myprofile] {
+        width: 850px;
+        margin-top: 30px;
+        margin-left: calc(50% - 450px);
+        display: grid;
+        grid-template-columns: 350px 500px;
+        grid-template-rows: 900px 800px;
+    }
+
+    .card[type=myprofile]:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        height: 900px;
+        width: 300px;
+        border-radius: 50px;
+        align-items: center;
+    }
+
+    .card[type=myprofile]:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+        height: 800px;
+        width: 500px;
+        border-radius: 0 50px 50px 50px;
+        top: 100px;
+        align-items: flex-start;
+    }
+
+    .card[type=myprofile]:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+        height: 700px;
+        border-radius: 0 50px 50px 50px;
+        width: 500px;
+        top: 100px;
+        align-items: flex-start;
+    }
+
+    .card[type=myprofile] h1 {
+        text-align: center;
+        font-family: GothamBold;
+        font-size: 22px;
+        color: #409C7B;
+        line-height: 34px;
+        margin-left: 0px;
+        padding-top: 20px;
+    }
+
+    .card[type=myprofile] h2 {
+        text-align: left;
+        font-family: GothamBold;
+        font-size: 22px;
+        color: #232323;
+        line-height: 34px;
+        margin-left: 0px;
+        margin-top: 180px;
+        padding-top: 10px;
+    }
+
+    .card[type=myprofile] h3 {
+        text-align: left;
+        font-family: 'Avenir Next';
+        font-weight: 500;
+        font-size: 16px;
+        color: #949494;
+        line-height: 28px;
+        padding-top: 10px;
+        margin-top: -20px;
+    }
+
+    .card[type=myprofile] h4 {
+        position: absolute;
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 36px;
+        border: none;
+        margin-left: -50px;
+        margin-top: -85px;
+    }
+
+    .card[type=myprofile] h5 {
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 28px;
+        border: none;
+        padding-top: 5px;
+    }
+
+    .card[type=myprofile] h5[type=state] {
+        position: absolute;
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 28px !important;
+        border: none;
+        padding-top: 25px;
+        margin-left: 190px;
+        margin-top: 270px;
+    }
+
+    .card[type=myprofile] h5[type=zip] {
+        position: absolute;
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 28px !important;
+        border: none;
+        padding-top: 25px;
+        margin-left: 300px;
+        margin-top: 270px;
+    }
+
+    .card[type=myprofile] h6 {
+        text-align: left;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #696969 !important;
+        font-size: 20px;
+        border: none;
+        padding-top: 30px;
+    }
+
+    .myprofile-info {
+        position: relative;
+        width: 95%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 20px;
+        border: none;
+        margin-left: 0px;
+        margin-top: 0px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .myprofile-info[type=city] {
+        position: relative;
+        width: 39%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 20px;
+        border: none;
+        margin-left: 0px;
+        margin-top: 5px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .myprofile-info[type=state] {
+        position: relative;
+        width: 17%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 20px;
+        border: none;
+        margin-left: 190px;
+        margin-top: -50px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .myprofile-info[type=zip] {
+        position: relative;
+        width: 20%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 20px;
+        border: none;
+        margin-left: 300px;
+        margin-top: -50px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .drop-button[type=myprofile] {
+        float: left;
+        width: 250px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        text-align: left;
+        text-indent: 20px;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        font-size: 20px;
+        background-color: #F2F2F2;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: #232323 !important;
+    }
+
+    .toggle-container {
+        position: relative;
+        margin-left: 300px;
+        margin-top: -70px;
+    }
+
+    .dropdown-menu[type=myprofile] {
+        position: relative;
+        text-indent: 0px;
+        width: 75.25% !important;
+        padding: 7.5px;
+        margin-top: 0px !important;
+        padding-bottom: 20px;
+        border-radius: 0 0 25px 25px;
+        background-color: #F2F2F2;
+        outline: none !important;
+        border: none !important;
+        box-shadow: 0 0 5px #DE5E3B !important;
+    }
+}
+
+@media only screen and (min-width: 115em) {
+    .main-cards[type=myprofile] {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 400px 600px 600px;
+        grid-template-rows: 900px;
+    }
+
+    .card[type=myprofile]:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        height: 900px;
+        width: 300px;
+        border-radius: 50px;
+        left: 50px;
+        align-items: center;
+    }
+
+    .card[type=myprofile]:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1;
+        height: 800px;
+        width: 500px;
+        border-radius: 0 50px 50px 50px;
+        top: 100px;
+        align-items: flex-start;
+    }
+
+    .card[type=myprofile]:nth-child(3) {
+        grid-column: 3;
+        grid-row: 1;
+        height: 700px;
+        border-radius: 0 50px 50px 50px;
+        width: 500px;
+        top: 100px;
+        align-items: flex-start;
+    }
+
+    .card[type=myprofile] h1 {
+        text-align: center;
+        font-family: GothamBold;
+        font-size: 22px;
+        color: #409C7B;
+        line-height: 34px;
+        margin-left: 0px;
+        padding-top: 20px;
+    }
+
+    .card[type=myprofile] h2 {
+        text-align: left;
+        font-family: GothamBold;
+        font-size: 22px;
+        color: #232323;
+        line-height: 34px;
+        margin-left: 0px;
+        margin-top: 180px;
+        padding-top: 10px;
+    }
+
+    .card[type=myprofile] h3 {
+        text-align: left;
+        font-family: 'Avenir Next';
+        font-weight: 500;
+        font-size: 16px;
+        color: #949494;
+        line-height: 28px;
+        padding-top: 10px;
+        margin-top: -20px;
+    }
+
+    .card[type=myprofile] h4 {
+        position: absolute;
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 36px;
+        border: none;
+        margin-left: -50px;
+        margin-top: -85px;
+    }
+
+    .card[type=myprofile] h5 {
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 28px;
+        border: none;
+        padding-top: 5px;
+    }
+
+    .card[type=myprofile] h5[type=state] {
+        position: absolute;
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 28px !important;
+        border: none;
+        padding-top: 25px;
+        margin-left: 190px;
+        margin-top: 270px;
+    }
+
+    .card[type=myprofile] h5[type=zip] {
+        position: absolute;
+        text-align: left;
+        font-family: GothamBold;
+        color: #232323 !important;
+        font-size: 28px !important;
+        border: none;
+        padding-top: 25px;
+        margin-left: 300px;
+        margin-top: 270px;
+    }
+
+    .card[type=myprofile] h6 {
+        text-align: left;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #696969 !important;
+        font-size: 20px;
+        border: none;
+        padding-top: 30px;
+    }
+
+    .myprofile-info {
+        position: relative;
+        width: 95%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 20px;
+        border: none;
+        margin-left: 0px;
+        margin-top: 0px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .myprofile-info[type=city] {
+        position: relative;
+        width: 39%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 20px;
+        border: none;
+        margin-left: 0px;
+        margin-top: 5px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .myprofile-info[type=state] {
+        position: relative;
+        width: 17%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 20px;
+        border: none;
+        margin-left: 190px;
+        margin-top: -50px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .myprofile-info[type=zip] {
+        position: relative;
+        width: 20%;
+        background-color: #E6E6E6;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        color: #232323 !important;
+        font-size: 20px;
+        border: none;
+        margin-left: 300px;
+        margin-top: -50px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .drop-button[type=myprofile] {
+        float: left;
+        width: 250px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        text-align: left;
+        text-indent: 20px;
+        font-family: 'Avenir Next';
+        font-weight: 600;
+        font-size: 20px;
+        background-color: #F2F2F2;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: #232323 !important;
+    }
+
+    .toggle-container {
+        position: relative;
+        margin-left: 300px;
+        margin-top: -70px;
+    }
+
+    .dropdown-menu[type=myprofile] {
+        position: relative;
+        text-indent: 0px;
+        width: 75.25% !important;
+        padding: 7.5px;
+        margin-top: 0px !important;
+        padding-bottom: 20px;
+        border-radius: 0 0 25px 25px;
+        background-color: #F2F2F2;
+        outline: none !important;
+        border: none !important;
+        box-shadow: 0 0 5px #DE5E3B !important;
+    }
+}
+
+.myprofile-body::-webkit-scrollbar {
+    width: 4px;
+}
+
+.main[type=myprofile] {
+    grid-area: main;
+    background-color: #ECECED;
+}
+
+.card[type=myprofile] {
+    font-family: AvenirNext-Medium;
+    font-size: 16px;
+    color: #232323;
+    float: left;
+    width: 100%;
+    background-color: #F2F2F2;
+    -webkit-column-break-inside: avoid;
+    padding: 1em 10%;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px #BABABA;
+    margin: 1em 10%;
+}
+
+.button[type=myprofile-green] {
+    float: left;
+    width: 200px;
+    margin-top: 50px;
+    padding: 7.5px;
+    text-align: center;
+    font-family: GothamBold;
+    font-size: 20px;
+    background-color: #48AC6D !important;
+    border-radius: 25px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    color: #F0F0F0 !important;
+    opacity: 0.85;
+}
+
+    .button[type=myprofile-green]:hover {
+        text-decoration: none;
+        outline: none;
+        border: none;
+        opacity: 1;
+    }
+
+    .button[type=myprofile-green]:focus {
+        opacity: 1;
+    }
+
+.button[type=myprofile-green-password] {
+    float: left;
+    width: 150px;
+    margin-top: 50px;
+    padding: 7.5px;
+    text-align: center;
+    font-family: 'Avenir Next';
+    font-weight: 600;
+    font-size: 16px;
+    background-color: #48AC6D !important;
+    border-radius: 25px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    color: #F0F0F0 !important;
+    opacity: 0.85;
+}
+
+    .button[type=myprofile-green-password]:hover {
+        text-decoration: none;
+        outline: none;
+        border: none;
+        opacity: 1;
+    }
+
+    .button[type=myprofile-green-password]:focus {
+        opacity: 1;
+    }
+
+.button[type=myprofile-green-submit] {
+    float: left;
+    width: 240px;
+    margin-top: 50px;
+    padding: 7.5px;
+    text-align: center;
+    font-family: GothamBold;
+    font-size: 24px;
+    background-color: #48AC6D !important;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 5px #3B8C59;
+    outline: none;
+    cursor: pointer;
+    color: #F0F0F0 !important;
+}
+
+    .button[type=myprofile-green-submit]:hover {
+        text-decoration: none;
+        background-color: transparent !important;
+        color: #48AC6D !important;
+        outline: none;
+        border: none;
+    }
+
+
+.button[type=myprofile-gray] {
+    float: left;
+    width: 200px;
+    margin-top: 30px;
+    padding: 7.5px;
+    text-align: center;
+    font-family: GothamBold;
+    font-size: 20px;
+    background-color: #949494 !important;
+    border-radius: 25px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    color: #F0F0F0 !important;
+    opacity: 0.85;
+}
+
+    .button[type=myprofile-gray]:hover {
+        text-decoration: none;
+        outline: none;
+        border: none;
+        opacity: 1;
+    }
+
+    .button[type=myprofile-gray]:focus {
+        opacity: 1;
+    }
+
+    .myprofile-info:focus {
+        outline: none;
+    }
+
+    .myprofile-info::-webkit-input-placeholder {
+        color: #232323;
+    }
+
+    .myprofile-info[type=city]:focus {
+        outline: none;
+    }
+
+    .myprofile-info[type=city]::-webkit-input-placeholder {
+        color: #232323;
+    }
+
+    .myprofile-info[type=state]:focus {
+        outline: none;
+    }
+
+    .myprofile-info[type=state]::-webkit-input-placeholder {
+        color: #232323;
+    }
+
+    .myprofile-info[type=zip]:focus {
+        outline: none;
+    }
+
+    .myprofile-info[type=zip]::-webkit-input-placeholder {
+        color: #232323;
+    }
+
+    .drop-button[type=myprofile]:hover {
+        text-decoration: none;
+        box-shadow: 0 0 5px #DE5E3B !important;
+        color: #DE5E3B !important;
+    }
+
+    .drop-button[type=myprofile]:focus {
+        border-radius: 25px 25px 0 0;
+        text-decoration: none;
+        box-shadow: 0 0 5px #DE5E3B !important;
+        color: #DE5E3B !important;
+    }
+
+.dropdown-item[type=myprofile] > a {
+    display: block;
+    padding: 0;
+    margin-left: -12px;
+    font-family: AvenirNext-Medium;
+    font-size: 18px;
+    text-align: left;
+    text-decoration: none;
+    color: #DE5E3B;
+}
+
+    .dropdown-item[type=myprofile] > a:hover {
+        color: #DE5E3B;
+    }
+
+.toggle-switch[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.standard-label {
+    cursor: pointer;
+    text-indent: -9999px;
+    background-color: gray;
+    width: 100px;
+    height: 50px;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+.standard-label:after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 42px;
+    height: 42px;
+    background-color: white;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+.standard-label:hover:after {
+    width: 50px;
+}
+
+.standard-label:active:after {
+    width: 60px;
+}
+
+.toggle-switch:checked + .standard-label {
+    background-color: #DE5E3B;
+}
+
+.toggle-switch:checked + .standard-label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}

@@ -1,0 +1,1455 @@
+.modal-backdrop {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75) !important;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    outline: none;
+    border: none;
+}
+
+.modal-main {
+    position: absolute;
+    background-color: #F2F2F2;
+    width: 725px;
+    height: 550px;
+    margin-left: calc(50vw - 725px / 2);
+    margin-top: 12.5%;
+    border-radius: 35px;
+    outline-color: #232323;
+    box-shadow: 0 0 10px #232323;
+}
+
+    .modal-main h1 {
+        text-align: left;
+        font-family: GothamBold;
+        font-size: 24px;
+        color: #DE5E3B;
+        line-height: 40px;
+        padding-left: 50px;
+        padding-top: 30px;
+    }
+
+    .modal-main h2 {
+        text-align: left;
+        font-family: 'Avenir Next';
+        font-weight: 500;
+        font-size: 16px !important;
+        color: #232323;
+        line-height: 30px !important;
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+    }
+
+.button[type=submit-plant] {
+    float: right;
+    width: 180px;
+    margin-right: 50px !important;
+    margin-top: 50px !important;
+    padding: 7.5px;
+    text-align: center;
+    font-family: GothamBold;
+    font-size: 20px;
+    background-color: #48AC6D !important;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 5px #3B8C59;
+    outline: none;
+    cursor: pointer;
+    color: #F0F0F0 !important;
+}
+
+    .button[type=submit-plant]:hover {
+        text-decoration: none;
+        background-color: transparent !important;
+        color: #48AC6D !important;
+        outline: none;
+        border: none;
+    }
+
+.button[type=submit-harvest] {
+    float: right;
+    width: 180px;
+    margin-right: 50px !important;
+    margin-top: 75px !important;
+    padding: 7.5px;
+    text-align: center;
+    font-family: GothamBold;
+    font-size: 20px;
+    background-color: #DE5E3B !important;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 5px #FF6D45;
+    outline: none;
+    cursor: pointer;
+    color: #F0F0F0 !important;
+}
+
+    .button[type=submit-harvest]:hover {
+        text-decoration: none;
+        background-color: transparent !important;
+        color: #DE5E3B !important;
+        outline: none;
+        border: none;
+    }
+
+.toggle-button-modal[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.modal-label {
+    cursor: pointer;
+    text-indent: 0px;
+    background-color: gray;
+    width: 100px;
+    height: 50px;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    box-shadow: 0 0 3px #696969;
+    margin-left: 220px;
+}
+
+    .modal-label[type=cutting]:after {
+        content: 'Cutting';
+        text-align: center !important;
+        color: #696969;
+        font-size: 15px;
+        padding-top: 7px;
+        position: absolute;
+        left: 4px;
+        bottom: 4px;
+        width: 92px;
+        height: 42px;
+        background-color: white;
+        border-radius: 90px;
+        transition: 0.3s;
+    }
+
+    .modal-label[type=feedback]:after {
+        content: 'Feedback';
+        text-align: center !important;
+        color: #696969;
+        font-size: 15px;
+        padding-top: 7px;
+        position: absolute;
+        left: 4px;
+        bottom: 4px;
+        width: 92px;
+        height: 42px;
+        background-color: white;
+        border-radius: 90px;
+        transition: 0.3s;
+    }
+
+    .modal-label:hover:after {
+        width: 92px;
+    }
+
+    .modal-label:active:after {
+        width: 92px;
+        color: #DE5E3B;
+    }
+
+.toggle-button-modal:checked + .modal-label {
+    background-color: #DE5E3B;
+    box-shadow: 0 0 3px #DE5E3B;
+    color: #DE5E3B
+}
+
+    .toggle-button-modal:checked + .modal-label:after {
+        background-color: white;
+        box-shadow: 0 0 3px #DE5E3B;
+        color: #DE5E3B
+    }
+
+.harvest-input[type=weight] {
+    position: absolute;
+    width: 100px;
+    background-color: transparent;
+    font-family: 'Avenir Next';
+    font-weight: 500;
+    color: #DE5E3B;
+    font-size: 18px;
+    padding-top: 7.5px !important;
+    padding: 1px;
+    border-width: 0 0 2px;
+    border-color: #DE5E3B;
+    margin-top: -10px;
+    margin-left: 186px;
+}
+
+.slot-info {
+    font-family: AvenirNext-Medium;
+    text-indent: 50px;
+    font-size: 16px;
+    color: #232323;
+    float: left;
+    width: 700px;
+    height: 300px;
+    background-color: #F2F2F2;
+    box-shadow: 0 0 5px #BABABA;
+    margin-top: 20px;
+    border-radius: 0px 0px 50px 50px;
+}
+
+    .slot-info h1 {
+        text-align: left;
+        font-family: GothamBold;
+        font-size: 24px;
+        color: #DE5E3B;
+        line-height: 40px;
+        margin-left: 0px;
+        padding-top: 20px;
+    }
+
+    .slot-info h2 {
+        text-align: left;
+        font-family: 'Avenir Next';
+        font-weight: 500;
+        font-size: 16px !important;
+        color: #232323;
+        line-height: 30px !important;
+        padding-top: 0px !important;
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+    }
+
+    .slot-info h3 {
+        text-align: left;
+        font-family: 'Avenir Next';
+        font-weight: 500;
+        font-size: 16px !important;
+        color: #232323;
+        line-height: 30px !important;
+        padding-top: 0px !important;
+        margin-left: 35px !important;
+        margin-top: 12px !important;
+    }
+
+    #slotinfo-text2 {
+        display: none;
+    }
+
+.button[type=small-white] {
+    position: absolute;
+    margin-top: 6px !important;
+    background-color: #F2F2F2;
+    border: 0;
+    width: 10px;
+    height: 20px;
+    border: 1px solid #232323;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 0 2px #232323;
+    box-shadow: 0 0 1px #232323 inset;
+}
+
+    .button[type=small-white]:hover {
+        outline: none;
+        background-color: #ECECED;
+    }
+
+    .button[type=small-white]:focus {
+        background-color: #ECECED;
+        outline: none;
+    }
+
+.button[type=plant-harvest] {
+    float: right;
+    margin-right: 25px;
+    margin-top: -40px;
+    background-color: #DE5E3B;
+    font-family: GothamBold;
+    border: 0;
+    width: 200px;
+    height: 130px;
+    font-size: 24px;
+    border-radius: 25px 25px 25px 25px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 5px #FF6D45;
+}
+
+    .button[type=plant-harvest]:hover {
+        background-color: #F2F2F2 !important;
+        outline: none;
+        border: none;
+    }
+
+    .button[type=plant-harvest]:active {
+        background-color: #F2F2F2;
+        outline: none;
+        border: none;
+    }
+
+    .button[type=plant-harvest]:focus {
+        outline: none;
+    }
+
+.drop-button[type=tray] {
+    float: right;
+    width: 250px;
+    margin-top: -10px !important;
+    padding: 7.5px;
+    text-align: center;
+    font-family: 'Avenir Next';
+    font-weight: 500;
+    font-size: 22px;
+    background-color: #48AC6D;
+    border-radius: 25px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    color: #F0F0F0 !important;
+    opacity: 0.85;
+}
+
+    .drop-button[type=tray]:hover {
+        text-decoration: none;
+        opacity: 1;
+    }
+
+    .drop-button[type=tray]:focus {
+        border-radius: 25px 25px 0 0;
+        opacity: 1;
+    }
+
+
+.dropdown-menu[type=tray] {
+    position: relative;
+    text-indent: 25px;
+    width: 250px;
+    padding: 7.5px;
+    margin-top: 0px !important;
+    padding-bottom: 20px;
+    border-radius: 0 0 25px 25px;
+    background-color: #48AC6D;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.dropdown-item[type=tray] > a {
+    display: block;
+    padding: 0;
+    margin-left: -12px;
+    font-family: AvenirNext-Medium;
+    font-size: 18px;
+    text-align: left;
+    text-decoration: none;
+    color: #F0F0F0;
+}
+
+    .dropdown-item[type=tray] > a:hover {
+        color: #DE5E3B;
+    }
+
+.slots-container {
+    height: 700px;
+    width: 700px;
+    background-image: linear-gradient(#B0B0B0, #D4D4D4, #B0B0B0);
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px #919191;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.slots-cards {
+    display: grid;
+    margin: 40px !important;
+    grid-template-columns: repeat(9, 70px);
+    grid-template-rows: repeat(9, 70px);
+}
+
+.slots-card {
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.slots-card:hover, .slots-card:focus {
+    margin-top: -10px;
+    margin-left: -10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    transition: 0.3s;
+}
+
+    .slots-card[type=green]:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:first-child {
+        grid-column: 1;
+        grid-row: 1;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(2) {
+        grid-column: 3;
+        grid-row: 1;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(2) {
+        grid-column: 3;
+        grid-row: 1;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(2) {
+        grid-column: 3;
+        grid-row: 1;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(3) {
+        grid-column: 5;
+        grid-row: 1;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(3) {
+        grid-column: 5;
+        grid-row: 1;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(3) {
+        grid-column: 5;
+        grid-row: 1;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(4) {
+        grid-column: 7;
+        grid-row: 1;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(4) {
+        grid-column: 7;
+        grid-row: 1;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(4) {
+        grid-column: 7;
+        grid-row: 1;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(5) {
+        grid-column: 9;
+        grid-row: 1;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(5) {
+        grid-column: 9;
+        grid-row: 1;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(5) {
+        grid-column: 9;
+        grid-row: 1;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(6) {
+        grid-column: 2;
+        grid-row: 2;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(6) {
+        grid-column: 2;
+        grid-row: 2;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(6) {
+        grid-column: 2;
+        grid-row: 2;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(7) {
+        grid-column: 4;
+        grid-row: 2;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(7) {
+        grid-column: 4;
+        grid-row: 2;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(7) {
+        grid-column: 4;
+        grid-row: 2;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(8) {
+        grid-column: 6;
+        grid-row: 2;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(8) {
+        grid-column: 6;
+        grid-row: 2;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(8) {
+        grid-column: 6;
+        grid-row: 2;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(9) {
+        grid-column: 8;
+        grid-row: 2;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(9) {
+        grid-column: 8;
+        grid-row: 2;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(9) {
+        grid-column: 8;
+        grid-row: 2;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(10) {
+        grid-column: 1;
+        grid-row: 3;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(10) {
+        grid-column: 1;
+        grid-row: 3;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(10) {
+        grid-column: 1;
+        grid-row: 3;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(11) {
+        grid-column: 3;
+        grid-row: 3;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(11) {
+        grid-column: 3;
+        grid-row: 3;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(11) {
+        grid-column: 3;
+        grid-row: 3;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(12) {
+        grid-column: 5;
+        grid-row: 3;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(12) {
+        grid-column: 5;
+        grid-row: 3;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(12) {
+        grid-column: 5;
+        grid-row: 3;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(13) {
+        grid-column: 7;
+        grid-row: 3;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(13) {
+        grid-column: 7;
+        grid-row: 3;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(13) {
+        grid-column: 7;
+        grid-row: 3;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(14) {
+        grid-column: 9;
+        grid-row: 3;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(14) {
+        grid-column: 9;
+        grid-row: 3;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(14) {
+        grid-column: 9;
+        grid-row: 3;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(15) {
+        grid-column: 2;
+        grid-row: 4;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(15) {
+        grid-column: 2;
+        grid-row: 4;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(15) {
+        grid-column: 2;
+        grid-row: 4;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(16) {
+        grid-column: 4;
+        grid-row: 4;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(16) {
+        grid-column: 4;
+        grid-row: 4;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(16) {
+        grid-column: 4;
+        grid-row: 4;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(17) {
+        grid-column: 6;
+        grid-row: 4;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(17) {
+        grid-column: 6;
+        grid-row: 4;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(17) {
+        grid-column: 6;
+        grid-row: 4;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(18) {
+        grid-column: 8;
+        grid-row: 4;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(18) {
+        grid-column: 8;
+        grid-row: 4;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(18) {
+        grid-column: 8;
+        grid-row: 4;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(19) {
+        grid-column: 1;
+        grid-row: 5;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(19) {
+        grid-column: 1;
+        grid-row: 5;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(19) {
+        grid-column: 1;
+        grid-row: 5;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(20) {
+        grid-column: 3;
+        grid-row: 5;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(20) {
+        grid-column: 3;
+        grid-row: 5;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(20) {
+        grid-column: 3;
+        grid-row: 5;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(21) {
+        grid-column: 5;
+        grid-row: 5;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(21) {
+        grid-column: 5;
+        grid-row: 5;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(21) {
+        grid-column: 5;
+        grid-row: 5;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(22) {
+        grid-column: 7;
+        grid-row: 5;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(22) {
+        grid-column: 7;
+        grid-row: 5;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(22) {
+        grid-column: 7;
+        grid-row: 5;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(23) {
+        grid-column: 9;
+        grid-row: 5;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(23) {
+        grid-column: 9;
+        grid-row: 5;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(23) {
+        grid-column: 9;
+        grid-row: 5;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(24) {
+        grid-column: 2;
+        grid-row: 6;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(24) {
+        grid-column: 2;
+        grid-row: 6;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(24) {
+        grid-column: 2;
+        grid-row: 6;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(25) {
+        grid-column: 4;
+        grid-row: 6;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(25) {
+        grid-column: 4;
+        grid-row: 6;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(25) {
+        grid-column: 4;
+        grid-row: 6;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(26) {
+        grid-column: 6;
+        grid-row: 6;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(26) {
+        grid-column: 6;
+        grid-row: 6;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(26) {
+        grid-column: 6;
+        grid-row: 6;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(27) {
+        grid-column: 8;
+        grid-row: 6;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(27) {
+        grid-column: 8;
+        grid-row: 6;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(27) {
+        grid-column: 8;
+        grid-row: 6;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(28) {
+        grid-column: 1;
+        grid-row: 7;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(28) {
+        grid-column: 1;
+        grid-row: 7;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(28) {
+        grid-column: 1;
+        grid-row: 7;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(29) {
+        grid-column: 3;
+        grid-row: 7;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(29) {
+        grid-column: 3;
+        grid-row: 7;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(29) {
+        grid-column: 3;
+        grid-row: 7;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(30) {
+        grid-column: 5;
+        grid-row: 7;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(30) {
+        grid-column: 5;
+        grid-row: 7;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(30) {
+        grid-column: 5;
+        grid-row: 7;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(31) {
+        grid-column: 7;
+        grid-row: 7;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(31) {
+        grid-column: 7;
+        grid-row: 7;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(31) {
+        grid-column: 7;
+        grid-row: 7;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(32) {
+        grid-column: 9;
+        grid-row: 7;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(32) {
+        grid-column: 9;
+        grid-row: 7;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(32) {
+        grid-column: 9;
+        grid-row: 7;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(33) {
+        grid-column: 2;
+        grid-row: 8;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(33) {
+        grid-column: 2;
+        grid-row: 8;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(33) {
+        grid-column: 2;
+        grid-row: 8;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(34) {
+        grid-column: 4;
+        grid-row: 8;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(34) {
+        grid-column: 4;
+        grid-row: 8;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(34) {
+        grid-column: 4;
+        grid-row: 8;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(35) {
+        grid-column: 6;
+        grid-row: 8;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(35) {
+        grid-column: 6;
+        grid-row: 8;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(35) {
+        grid-column: 6;
+        grid-row: 8;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(36) {
+        grid-column: 8;
+        grid-row: 8;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(36) {
+        grid-column: 8;
+        grid-row: 8;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(36) {
+        grid-column: 8;
+        grid-row: 8;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(37) {
+        grid-column: 1;
+        grid-row: 9;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(37) {
+        grid-column: 1;
+        grid-row: 9;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(37) {
+        grid-column: 1;
+        grid-row: 9;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(38) {
+        grid-column: 3;
+        grid-row: 9;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(38) {
+        grid-column: 3;
+        grid-row: 9;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(38) {
+        grid-column: 3;
+        grid-row: 9;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(39) {
+        grid-column: 5;
+        grid-row: 9;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(39) {
+        grid-column: 5;
+        grid-row: 9;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(39) {
+        grid-column: 5;
+        grid-row: 9;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(40) {
+        grid-column: 7;
+        grid-row: 9;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(40) {
+        grid-column: 7;
+        grid-row: 9;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(40) {
+        grid-column: 7;
+        grid-row: 9;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+    .slots-card[type=green]:nth-child(41) {
+        grid-column: 9;
+        grid-row: 9;
+        background-image: radial-gradient(#9ED181, #48AC6D);
+        box-shadow: 0 0 10px #3D915C;
+    }
+
+    .slots-card[type=yellow]:nth-child(41) {
+        grid-column: 9;
+        grid-row: 9;
+        background-image: radial-gradient(#F5EFB5, #F5E04D);
+        box-shadow: 0 0 10px #DEC521;
+    }
+
+    .slots-card[type=red]:nth-child(41) {
+        grid-column: 9;
+        grid-row: 9;
+        background-image: radial-gradient(#EB2F2A, #DE5E3B);
+        box-shadow: 0 0 10px #FF6D45;
+    }
+
+@media only screen and (min-width: 45em) and (max-width: 50em) {
+    .slots-container {
+        height: 90vw;
+        width: 90vw;
+        background-image: linear-gradient(#B0B0B0, #D4D4D4, #B0B0B0);
+        border: none;
+        outline: none;
+        box-shadow: 0 0 5px #919191;
+        border-radius: 50px 50px 0px 0px;
+    }
+
+    .slots-cards {
+        display: grid;
+        margin: 40px !important;
+        grid-template-columns: repeat(9, calc((90vw - 80px) / 9));
+        grid-template-rows: repeat(9, calc((90vw - 80px) / 9));
+    }
+
+    .slots-card {
+        width: 5vw;
+        height: 5vw;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .slots-card:hover, .slots-card:focus {
+        margin-top: -2px;
+        margin-left: -2px;
+        width: 6vw;
+        height: 6vw;
+        border-radius: 40px;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        transition: 0.3s;
+    }
+
+    .slot-info {
+        font-family: AvenirNext-Medium;
+        text-indent: 50px;
+        font-size: 16px;
+        color: #232323;
+        float: left;
+        width: 90vw;
+        height: 300px;
+        background-color: #F2F2F2;
+        box-shadow: 0 0 5px #BABABA;
+        margin-top: 20px;
+        border-radius: 0px 0px 50px 50px;
+    }
+
+    .button[type=plant-harvest] {
+        float: right;
+        margin-right: 25px;
+        margin-top: -40px;
+        background-color: #DE5E3B;
+        font-family: GothamBold;
+        border: 0;
+        width: 200px;
+        height: 130px;
+        font-size: 24px;
+        border-radius: 25px 25px 25px 25px;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 0 5px #FF6D45;
+    }
+}
+
+@media only screen and (max-width: 45em) {
+    .slots-container {
+        height: 90vw;
+        width: 90vw;
+        background-image: linear-gradient(#B0B0B0, #D4D4D4, #B0B0B0);
+        border: none;
+        outline: none;
+        box-shadow: 0 0 5px #919191;
+        border-radius: 50px 50px 0px 0px;
+    }
+
+    .slots-cards {
+        display: grid;
+        margin: 40px !important;
+        grid-template-columns: repeat(9, calc((90vw - 80px) / 9));
+        grid-template-rows: repeat(9, calc((90vw - 80px) / 9));
+    }
+
+    .slots-card {
+        width: 5vw;
+        height: 5vw;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .slots-card:hover, .slots-card:focus {
+        margin-top: -2px;
+        margin-left: -2px;
+        width: 6vw;
+        height: 6vw;
+        border-radius: 40px;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        transition: 0.3s;
+    }
+
+    .slot-info {
+        font-family: AvenirNext-Medium;
+        text-indent: 50px;
+        font-size: 16px;
+        color: #232323;
+        float: left;
+        width: 90vw;
+        height: 300px;
+        background-color: #F2F2F2;
+        box-shadow: 0 0 5px #BABABA;
+        margin-top: 20px;
+        border-radius: 0px 0px 50px 50px;
+    }
+
+    .button[type=plant-harvest] {
+        position: absolute;
+        margin-left: calc(50% - 150px);
+        margin-top: 110px;
+        background-color: #DE5E3B;
+        font-family: GothamBold;
+        border: 0;
+        width: 200px;
+        height: 50px;
+        font-size: 24px;
+        border-radius: 25px 25px 25px 25px;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 0 5px #FF6D45;
+    }
+
+    #slotinfo-text1 {
+        display: none;
+    }
+
+    #slotinfo-text2 {
+        display: block;
+    }
+
+    .modal-main {
+        position: absolute;
+        background-color: #F2F2F2;
+        width: 90vw;
+        height: 700px;
+        margin-left: 5vw;
+        margin-top: calc((100vh - 700px) / 2);
+        border-radius: 35px;
+        outline-color: #232323;
+        box-shadow: 0 0 10px #232323;
+    }
+
+    .modal-label {
+        position: relative;
+        margin-left: calc(50vw - 420px);
+        margin-top: 75px;
+    }
+
+    .modal-main h2 {
+        padding-bottom: 50px;
+        font-size: 14px !important;
+    }
+
+    #new-line {
+        display: none;
+    }
+
+    #first-line {
+        margin-top: -50px !important;
+    }
+
+    .harvest-input[type=weight] {
+        text-align: center;
+        margin-top: 50px;
+        margin-left: calc(50vw - 420px);
+    }
+
+    .button[type=submit-plant] {
+        position: absolute;
+        margin-top: 150px !important;
+        margin-left: calc(50vw - 120px) !important;
+    }
+
+    .button[type=submit-harvest] {
+        position: absolute;
+        margin-left: calc(50vw - 120px) !important;
+    }
+
+    .drop-button[type=tray] {
+        float: left;
+        margin-top: 50px !important;
+    }
+}

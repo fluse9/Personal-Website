@@ -1,0 +1,187 @@
+@media only screen and (max-width: 58em) {
+    .header-dashboard {
+        float: left;
+        font-family: 'Avenir Next';
+        font-size: 22px;
+        font-weight: 500;
+        margin-left: 0px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        color: #232323;
+        border-bottom: 1px solid #ECECED;
+    }
+}
+
+@media only screen and (min-width: 58em) {
+    .header-dashboard {
+        float: left;
+        font-family: 'Avenir Next';
+        font-size: 22px;
+        font-weight: 500;
+        margin-left: 0px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        color: #232323;
+        border-bottom: 1px solid #ECECED;
+    }
+
+    #notification-menu {
+        margin-right: 5% !important;
+    }
+}
+
+.dash {
+    position: relative !important;
+    float: left;
+}
+
+.header {
+    grid-area: header;
+    background-color: #ECECED;
+}
+
+.header-icons {
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+.header-icons i {
+    position: absolute;
+    margin-right: 0px;
+}
+
+.icon {
+    padding-top: 1.5%;
+    color: #232323;
+    text-align: center;
+}
+
+.sidenav {
+    grid-area: sidenav;
+    background-color: #3C9173;
+    margin-top: 50px;
+    margin-right: 5px;
+    box-shadow: 0 0 5px #0B6F78;
+    border-radius: 0 25px 25px 0;
+    height: 82.5vh;
+    text-decoration: none !important;
+}
+
+.sidenav__profile {
+    list-style-type: none;
+    font-family: 'Avenir Next';
+    font-size: 16px;
+    font-weight: 500;
+    padding: 20px 20px 20px 40px;
+    background-color: #DE5E3B;
+    color: #ECECED;
+    border-bottom: 1px solid #ECECED;
+    box-shadow: 0 0 5px #FF6D45;
+    border-radius: 0 25px 0 0;
+}
+
+.sidenav__list {
+    padding: 0;
+    margin-top: 0px;
+    list-style-type: none;
+    width: 100%;
+    text-decoration: none;
+}
+
+.sidenav__list-item {
+    font-family: 'Avenir Next';
+    font-size: 12px;
+    font-weight: 400;
+    padding: 20px 20px 20px 40px;
+    color: #ECECED;
+    border-bottom: 1px solid #ECECED;
+    text-decoration: none !important;
+}
+
+    .sidenav__list-item:hover {
+        text-decoration: none !important;
+        background-color: #2F735B;
+        cursor: pointer;
+    }
+
+    .sidenav__list-item-link:hover {
+        text-decoration: none !important;
+    }
+
+.drop-button[type=account] {
+    float: left;
+    margin-left: calc(84.5vw + 40px);
+    font-size: 20px;
+    background: #ECECED;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    color: transparent;
+}
+
+.drop-button[type=notification] {
+    float: left;
+    margin-left: 96vw;
+    font-size: 20px;
+    background: #ECECED;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    color: transparent;
+}
+
+.dropdown-menu {
+    position: relative;
+    margin-top: 60px !important;
+    margin-right: 0% !important;
+    padding: 0;
+    background-color: white;
+    outline: none !important;
+    border: none !important;
+    box-shadow: 0 0 5px #BABABA !important;
+}
+
+.dropdown-item[type=account] > a {
+    display: block;
+    padding: 0;
+    font-family: 'Avenir Next';
+    font-size: 12px;
+    text-align: left;
+    text-decoration: none;
+    color: #232323;
+}
+
+.dropdown-item[type=notification] > a {
+    display: block;
+    padding: 0;
+    font-family: 'Avenir Next';
+    font-size: 12px;
+    text-align: left;
+    text-decoration: none;
+    color: #232323;
+}
+
+.dropdown-item > a:hover {
+    color: #DE5E3B;
+}
+
+.search-bar {
+    margin-left: 75.75vw;
+    margin-top: 1.25%;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 5px #BABABA;
+    border-radius: 25px;
+}
+
+input[type=search], select, textarea {
+    font-family: 'Avenir Next';
+    color: #232323;
+    font-weight: 500;
+    font-size: 16px;
+    text-indent: 10px;
+    padding: 5px;
+}

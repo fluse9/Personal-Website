@@ -1,0 +1,50 @@
+.slider-container {
+    position: relative;
+    margin-bottom: -20px;
+    width: 100%; /* Width of the outside container */
+}
+
+    .slider-container .bar {
+        position: absolute;
+        z-index: 1 !important;
+        top: 10px;
+        border-radius: 20px;
+        height: 13px;
+        width: 100%;
+        overflow: hidden;
+        background-color: #DE5E3B;
+        opacity: 1;
+    }
+
+        .slider-container .bar .fill {
+            display: block;
+            width: 50%;
+            height: 100%;
+            background-color: #DE5E3B;
+            overflow: hidden;
+            opacity: 1;
+        }
+
+    /* The slider itself */
+    .slider-container .slider {
+        position: relative;
+        z-index: 2 !important;
+        -webkit-appearance: none; /* Override default CSS styles */
+        width: 100%; /* Full-width */
+        height: 0px; /* Specified height */
+        background: transparent; /* Grey background */
+        border-radius: 25px;
+        outline: none; /* Remove outline */
+        opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+        transition: opacity .2s;
+    }
+        /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+        .slider-container .slider::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Override default look */
+            width: 25px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: white; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+            border-radius: 100px;
+        }
