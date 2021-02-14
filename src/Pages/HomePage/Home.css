@@ -2,7 +2,8 @@
     .landing {
         position: relative;
         background: url("../../Assets/images/background.png") no-repeat center center fixed;
-        background-size: 275vw;
+        background-size: 375vw;
+        background-position: 45%;
         width: 100vw;
         height: 100vh;
     }
@@ -13,6 +14,7 @@
         font-family: 'Avenir Next';
         font-size: 40px;
         line-height: 80px;
+        font-weight: 700;
         padding: 0;
         margin: 0;
     }
@@ -34,16 +36,26 @@
         color: white;
         font-family: 'Avenir Next';
         font-size: 18px;
-        line-height: 36px;
-        font-weight: 500;
+        line-height: 44px;
+        font-weight: 400;
         width: 150px;
-        margin-left: calc(50vw - 75px);
+        margin-left: calc(50vw - 100px);
+        margin-top: 300px;
         border-radius: 25px;
         outline: none;
         border: solid white 1px;
         box-shadow: none;
         cursor: pointer;
     }
+
+    .learn-more {
+        color: white;
+    }
+
+        .learn-more:hover {
+            color: white;
+            text-decoration: none;
+        }
 
     .main-cards1 {
         display: grid;
@@ -60,7 +72,7 @@
     .main-cards2 {
         display: grid;
         grid-template-columns: 80vw;
-        grid-template-rows: 50px 100px 600px;
+        grid-template-rows: 50px 150px 600px;
         margin-top: 50px;
         margin-left: 10vw;
         margin-right: 10vw;
@@ -199,6 +211,7 @@
         z-index: 1;
         border-radius: 10px;
         cursor: pointer;
+        margin-top: -70px;
     }
 
     .text8[type=right] {
@@ -444,7 +457,8 @@
     .landing {
         position: relative;
         background: url("../../Assets/images/background.png") no-repeat center center fixed;
-        background-size: 250vw;
+        background-size: 350vw;
+        background-position: 45%;
         width: 100vw;
         height: 100vh;
     }
@@ -455,6 +469,7 @@
         font-family: 'Avenir Next';
         font-size: 44px;
         line-height: 88px;
+        font-weight: 700;
         padding: 0;
         margin: 0;
     }
@@ -476,16 +491,26 @@
         color: white;
         font-family: 'Avenir Next';
         font-size: 18px;
-        line-height: 36px;
-        font-weight: 500;
+        line-height: 44px;
+        font-weight: 400;
         width: 150px;
-        margin-left: calc(50vw - 75px);
+        margin-left: calc(50vw - 100px);
+        margin-top: 300px;
         border-radius: 25px;
         outline: none;
         border: solid white 1px;
         box-shadow: none;
         cursor: pointer;
     }
+
+    .learn-more {
+        color: white;
+    }
+
+        .learn-more:hover {
+            color: white;
+            text-decoration: none;
+        }
 
     .main-cards1 {
         display: grid;
@@ -502,7 +527,7 @@
     .main-cards2 {
         display: grid;
         grid-template-columns: 80vw;
-        grid-template-rows: 50px 100px 600px;
+        grid-template-rows: 50px 150px 600px;
         margin-top: 50px;
         margin-left: 10vw;
         margin-right: 10vw;
@@ -641,6 +666,7 @@
         z-index: 1;
         border-radius: 10px;
         cursor: pointer;
+        margin-top: -70px;
     }
 
     .text8[type=right] {
@@ -848,7 +874,7 @@
     .landing {
         position: relative;
         background: url("../../Assets/images/background.png") no-repeat center center fixed;
-        background-size: 150vw;
+        background-size: 190vw;
         width: 100vw;
         height: 100vh;
     }
@@ -859,6 +885,7 @@
         font-family: 'Avenir Next';
         font-size: 56px;
         line-height: 112px;
+        font-weight: 700;
         padding: 0;
         margin: 0;
     }
@@ -883,13 +910,23 @@
         line-height: 44px;
         font-weight: 400;
         width: 200px;
-        margin-left: calc(50vw - 100px);
+        margin-left: calc(50vw - 135px);
+        margin-top: 300px;
         border-radius: 25px;
         outline: none;
         border: solid white 1px;
         box-shadow: none;
         cursor: pointer;
     }
+
+    .learn-more {
+        color: white;
+    }
+
+        .learn-more:hover {
+            color: white;
+            text-decoration: none;
+        }
 
     .main-cards1 {
         display: grid;
@@ -1045,7 +1082,7 @@
     }
 
     .overlay[type=left] {
-        float: left;
+        position: absolute;
         width: 55%;
         height: 27.5vw;
         background: #188F88;
@@ -1055,13 +1092,15 @@
     }
 
     .overlay[type=right] {
-        float: right;
+        position: absolute;
         width: 55%;
         height: 27.5vw;
         background: #188F88;
         z-index: 1;
         border-radius: 10px;
         cursor: pointer;
+        margin-left: 45%;
+        margin-top: -70px;
     }
 
     .textbox[type=right] {
@@ -1120,7 +1159,6 @@
         font-weight: 600;
         padding: 0;
         margin-top: 10px;
-        width: 250px;
     }
 
     .text9[type=left] {
@@ -1133,7 +1171,6 @@
         font-weight: 600;
         padding: 0;
         margin-top: 10px;
-        width: 250px;
     }
 
     .text10[type=right] {
@@ -1264,7 +1301,7 @@
     .landing {
         position: relative;
         background: url("../../Assets/images/background.png") no-repeat center center fixed;
-        background-size: 150vw;
+        background-size: 190vw;
         width: 100vw;
         height: 100vh;
     }
@@ -1275,6 +1312,7 @@
         font-family: 'Avenir Next';
         font-size: 56px;
         line-height: 112px;
+        font-weight: 700;
         padding: 0;
         margin: 0;
     }
@@ -1299,13 +1337,23 @@
         line-height: 44px;
         font-weight: 400;
         width: 200px;
-        margin-left: calc(50vw - 100px);
+        margin-left: calc(50vw - 135px);
+        margin-top: 300px;
         border-radius: 25px;
         outline: none;
         border: solid white 1px;
         box-shadow: none;
         cursor: pointer;
     }
+
+    .learn-more {
+        color: white;
+    }
+
+        .learn-more:hover {
+            color: white;
+            text-decoration: none;
+        }
 
     .main-cards1 {
         display: grid;
@@ -1461,7 +1509,7 @@
     }
 
     .overlay[type=left] {
-        float: left;
+        position: absolute;
         width: 500px;
         height: 312px;
         background: #188F88;
@@ -1471,13 +1519,15 @@
     }
 
     .overlay[type=right] {
-        float: right;
+        position: absolute;
         width: 500px;
         height: 312px;
         background: #188F88;
         z-index: 1;
         border-radius: 10px;
         cursor: pointer;
+        margin-left: calc(100% - 500px);
+        margin-top: -70px;
     }
 
     .textbox[type=right] {
@@ -1536,7 +1586,6 @@
         font-weight: 600;
         padding: 0;
         margin-top: 10px;
-        width: 300px;
     }
 
     .text9[type=left] {
@@ -1549,7 +1598,6 @@
         font-weight: 600;
         padding: 0;
         margin-top: 10px;
-        width: 300px;
     }
 
     .text10[type=right] {
@@ -1680,7 +1728,7 @@
     .landing {
         position: relative;
         background: url("../../Assets/images/background.png") no-repeat center center fixed;
-        background-size: 100vw;
+        background-size: 120vw;
         width: 100vw;
         height: 100vh;
     }
@@ -1691,6 +1739,7 @@
         font-family: 'Avenir Next';
         font-size: 64px;
         line-height: 128px;
+        font-weight: 700;
         padding: 0;
         margin: 0;
     }
@@ -1715,13 +1764,23 @@
         line-height: 44px;
         font-weight: 400;
         width: 200px;
-        margin-left: calc(50vw - 100px);
+        margin-left: calc(50vw - 135px);
+        margin-top: 300px;
         border-radius: 25px;
         outline: none;
         border: solid white 1px;
         box-shadow: none;
         cursor: pointer;
     }
+
+    .learn-more {
+        color: white;
+    }
+
+        .learn-more:hover {
+            color: white;
+            text-decoration: none;
+        }
 
     .main-cards1 {
         display: grid;
@@ -1877,7 +1936,7 @@
     }
 
     .overlay[type=left] {
-        float: left;
+        position: absolute;
         width: 500px;
         height: 312px;
         background: #188F88;
@@ -1887,13 +1946,15 @@
     }
 
     .overlay[type=right] {
-        float: right;
+        position: absolute;
         width: 500px;
         height: 312px;
         background: #188F88;
         z-index: 1;
         border-radius: 10px;
         cursor: pointer;
+        margin-left: calc(100% - 500px);
+        margin-top: -70px;
     }
 
     .textbox[type=right] {
@@ -1952,7 +2013,6 @@
         font-weight: 600;
         padding: 0;
         margin-top: 10px;
-        width: 300px;
     }
 
     .text9[type=left] {
@@ -1965,7 +2025,6 @@
         font-weight: 600;
         padding: 0;
         margin-top: 10px;
-        width: 300px;
     }
 
     .text10[type=right] {
@@ -2094,7 +2153,7 @@
 
 .about {
     position: relative;
-    background-color: white;
+    background: white !important;
     width: 100vw;
     height: 100vh;
 }
@@ -2273,8 +2332,8 @@
             background: #022140; /* Green background */
             border-radius: 25px;
             box-shadow: none;
-            margin-top: -17px;
-            margin-left: -1px;
+            margin-top: -18px;
+            margin-left: 0px;
         }
 
 .overlay[type=profile] {
@@ -2341,3 +2400,33 @@
     .contact-info:hover {
         box-shadow: 0 0 3px 0 black;
     }
+
+.landing {
+    border-radius: 0 !important;
+}
+
+.card[type="experience"] {
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+.card[type="about"] {
+    outline: none;
+    border: none;
+}
+
+.card[type="projects"] {
+    outline: none;
+    border: none;
+}
+
+.card[type="portfolio"] {
+    outline: none;
+    border: none;
+}
+
+.card[type="contact"] {
+    outline: none;
+    border: none;
+}

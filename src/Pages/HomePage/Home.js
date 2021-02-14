@@ -156,13 +156,10 @@ class Home extends React.Component {
                         <div class="card" type="about">
                             <h1 class="text3"></h1>
                         </div>
-                        <div class="card">
+                        <div class="card" type="about">
                             <div class="border">
                                 <div class="overlay" type="profile"><img src={profile} alt="profile" class="profile"/></div>
                             </div>
-                        </div>
-                        <div class="card">
-                            <h1 class="text3"></h1>
                         </div>
                     </div>
                     <div class="main-cards2">
@@ -193,13 +190,13 @@ class Home extends React.Component {
                             </h1>
                         </div>
                         <div class="card" type="portfolio">
-                            <div class="overlay" type="left"><img src={web_app} alt="web_app" class="feature"></img></div>
                             <h1 class="text8" type="right">
                                 Featured Work
                             </h1>
                             <h2 class="text9" type="right">
                                 Terrafarm Web App
                             </h2>
+                            <div class="overlay" type="left"><img src={web_app} alt="web_app" class="feature"></img></div>
                             <div class="textbox" type="right">
                                 <h1 class="text10" type="right">
                                 A web application that allows customers to monitor and manage their Terrafarm.
@@ -212,15 +209,15 @@ class Home extends React.Component {
                             <FontAwesomeIcon icon={faExternalLinkAlt} style={{ color: "#022140", marginTop: "15px", float: "right", cursor: "pointer" }}></FontAwesomeIcon>
                         </div>
                         <div class="card" type="portfolio">
-                            <a href="https://terrafarm.us" style={{ textDecoration: "none" }}>
-                                <div class="overlay" type="right"><img src={website} alt="website" class="feature"></img></div>
-                            </a>
                             <h1 class="text8" type="left">
                                 Featured Work
                             </h1>
                             <h2 class="text9" type="left">
                                 Terrafarm Website
                             </h2>
+                            <a href="https://terrafarm.us" style={{ textDecoration: "none" }}>
+                                <div class="overlay" type="right"><img src={website} alt="website" class="feature"></img></div>
+                            </a>
                             <div class="textbox" type="left">
                                 <h1 class="text10" type="left">
                                 Terrafarm's eCommerce website which contains information about the company and its products.
@@ -321,7 +318,7 @@ class Home extends React.Component {
                         </div>
                     </div>
                     <div class="main-cards5">
-                        <div class="card">
+                        <div class="card" type="contact">
                             <h1 class="text3"  style={{ textAlign: "center" }} id="contact">
                                 Get In Touch
                             </h1>
