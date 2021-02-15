@@ -124,35 +124,35 @@ class MyProfile extends React.Component {
 
     changeCountry = (country) => {
         this.state.country = country;
-        this.updateAddress();
+        this.setState({});
     }
 
     changeLanguage = (language) => {
         this.state.language_preference = language;
-        this.updateAccountInfo();
+        this.setState({});
     }
 
     changeAccountType = (accountType) => {
         this.state.account_type = accountType;
-        this.updateAccountInfo();
+        this.setState({});
     }
 
     changeEmailNotifications = () => {
         const previous = this.state.email_notifications;
         this.state.email_notifications = !previous;
-        this.updateAccountInfo();
+        this.setState({});
     }
 
     changeAutomaticShipments = () => {
         const previous = this.state.automatic_shipments;
         this.state.automatic_shipments = !previous;
-        this.updateAccountInfo();
+        this.setState({});
     }
 
     changeDataShare = () => {
         const previous = this.state.data_share;
         this.state.data_share = !previous;
-        this.updateAccountInfo();
+        this.setState({});
     }
 
     componentDidMount() {
@@ -161,200 +161,47 @@ class MyProfile extends React.Component {
         this.fetchAccountInfo();
     }
 
-    updateAddress() {
-        const token = this.context.token;
 
-        const requestBody = {
-            query: `
-                mutation {
-                    updateAddress(address_id: "${this.state.address_id}", addressInput: {address_type: "Primary", address_line1: "${this.state.address_line1}", address_line2: "${this.state.address_line2}", city: "${this.state.city}", region: "${this.state.region}", post_code: "${this.state.post_code}", country: "${this.state.country}"}) {
-                        address_type
-                    }
-                }
-            `
-        };
+    fetchCustomer() {
+        const customer = ({
+            'customer_name': 'Frank Luse',
+            'customer_email': 'fluse@example.com',
+            'customer_password': 'sample_password',
+            'customer_phone': '847-555-2098'
+        });
 
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + token
-            }
-        })
-            .then(res => {
-                if (res.status !== 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.fetchAddress();
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }
-
-    updateAccountInfo() {
-        const customer_id = this.context.customer_id;
-        const token = this.context.token; 
-
-        const requestBody = {
-            query: `
-                mutation {
-                    updateAccountInfo(customer_id: "${customer_id}", accountInfoInput: { language_preference: "${this.state.language_preference}", account_type: "${this.state.account_type}", email_notifications: ${this.state.email_notifications}, automatic_shipments: ${this.state.automatic_shipments}, data_share: ${this.state.data_share} }) {
-                    language_preference
-                    account_type
-                    email_notifications
-                    automatic_shipments
-                    data_share
-                    }
-                }
-                `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + token
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.fetchAccountInfo();
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        this.setCustomer(customer);
     }
 
     fetchAddress() {
-        const customer_id = this.context.customer_id
-        const requestBody = {
-            query: `
-                    query {
-                      customer(customer_id: "${customer_id}") {
-                        customer_name
-                        customer_email
-                        customer_password
-                        customer_phone
-                      }
-                    }
-                `
-        };
+        const address_list = ([{
+            'address_type': 'Primary',
+            'address_line1': '645 Vermont St',
+            'address_line2': '',
+            'city': 'Lawrence',
+            'region': 'KS',
+            'post_code': '66044',
+            'country': 'United States'
+        }]);
 
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json'
+        var i;
+        for (i = 0; i < address_list.length; i++) {
+            if (address_list[i]['address_type'] === 'Primary') {
+                this.setAddress(address_list[i]);
             }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                const customer = resData.data['customer']
-                this.setCustomer(customer);
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }
-
-    fetchCustomer() {
-        const customer_id = this.context.customer_id
-        const requestBody = {
-            query: `
-                    query {
-                      addresses(customer_id: "${customer_id}") {
-                        address_id
-                        address_type
-                        address_line1
-                        address_line2
-                        city
-                        region
-                        post_code
-                        country
-                      }
-                    }
-                `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                const address_list = resData.data['addresses']
-                var i;
-                for (i = 0; i < address_list.length; i++) {
-                    if (address_list[i]['address_type'] === 'Primary') {
-                        this.setAddress(address_list[i]);
-                    }
-                }
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        }
     }
 
     fetchAccountInfo() {
-        const customer_id = this.context.customer_id
-        const requestBody = {
-            query: `
-                    query {
-                      accountInfo(customer_id: "${customer_id}") {
-                        language_preference
-                        account_type
-                        email_notifications
-                        automatic_shipments
-                        data_share
-                      }
-                    }
-                `
-        };
+        const accountinfo = ({
+            'language_preference': 'English',
+            'account_type': 'Home',
+            'email_notifications': true,
+            'automatic_shipments': false,
+            'data_share': true
+        });
 
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                const accountinfo = resData.data['accountInfo']
-                this.setAccountInfo(accountinfo);
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        this.setAccountInfo(accountinfo);
     }
 
     submitHandler = (event) => {
@@ -386,74 +233,8 @@ class MyProfile extends React.Component {
         if (this.passwordElement.current.value !== '') {
             this.state.password = this.passwordElement.current.value.toUpperCase();
         }
-
-        const customer_id = this.context.customer_id
-
-        const requestBody = {
-            query: `
-                mutation {
-                    updateCustomer(customer_id: "${customer_id}", customerInput: {customer_name: "${this.state.name}", customer_email: "${this.state.email}", customer_password: "${this.state.password}", customer_phone: "${this.state.phone}"}) {
-                        customer_name
-                    }
-                }
-            `
-        };
-
-        const token = this.context.token;
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + token
-            }
-        })
-            .then(res => {
-                if (res.status !== 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.fetchCustomer();
-            })
-            .catch(err => {
-                console.log(err);
-            });
-
-        const requestBody2 = {
-            query: `
-                mutation {
-                    updateAddress(address_id: "${this.state.address_id}", addressInput: {address_type: "Primary", address_line1: "${this.state.address_line1}", address_line2: "${this.state.address_line2}", city: "${this.state.city}", region: "${this.state.region}", post_code: "${this.state.post_code}", country: "${this.state.country}"}) {
-                        address_type
-                    }
-                }
-            `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody2),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + token
-            }
-        })
-            .then(res => {
-                if (res.status !== 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.fetchAddress();
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        this.setState({});
     }
-
 
     render() {
         $(document).ready(function () {
@@ -487,7 +268,6 @@ class MyProfile extends React.Component {
                                         <h3>{this.state.email}</h3>
                                         <button class="button" type="myprofile-green">OVERVIEW</button>
                                         <button class="button" type="myprofile-gray" id="edit">EDIT ACCOUNT</button>
-                                        <a href="/signin"><button class="button" type="myprofile-gray" style={{ marginTop: "275px" }} onClick={this.context.logout}>SIGN OUT</button></a>
                                     </div>
                                     <div class="card" type="myprofile">
                                         <h4>ACCOUNT INFO</h4>

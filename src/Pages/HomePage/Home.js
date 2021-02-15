@@ -116,13 +116,13 @@ class Home extends React.Component {
                             Software and data engineer with 1.5 years of experience
                             <br></br>
                             as the lead developer at a fast-paced startup
-                            </h2>
+                        </h2>
+                        <Link activeClass="active" to="about" spy={true} smooth={true} offset={-70} duration={1000}>
+                            <button class="clear">
+                                <a class="learn-more">Learn More</a>
+                            </button>
+                        </Link>
                     </div>
-                    <Link activeClass="active" to="about" spy={true} smooth={true} offset={-70} duration={1000}>
-                        <button class="clear">
-                            <a class="learn-more">Learn More</a>
-                        </button>
-                    </Link>
                 </Jumbotron>
                 <Jumbotron className="about">
                     <div class="main-cards1">
@@ -196,7 +196,9 @@ class Home extends React.Component {
                             <h2 class="text9" type="right">
                                 Terrafarm Web App
                             </h2>
-                            <div class="overlay" type="left"><img src={web_app} alt="web_app" class="feature"></img></div>
+                            <a href="/dashboard">
+                                <div class="overlay" type="left"><img src={web_app} alt="web_app" class="feature"></img></div>
+                            </a>
                             <div class="textbox" type="right">
                                 <h1 class="text10" type="right">
                                 A web application that allows customers to monitor and manage their Terrafarm.

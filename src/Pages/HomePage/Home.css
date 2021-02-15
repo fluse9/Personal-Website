@@ -40,7 +40,7 @@
         font-weight: 400;
         width: 150px;
         margin-left: calc(50vw - 100px);
-        margin-top: 300px;
+        margin-top: 100px;
         border-radius: 25px;
         outline: none;
         border: solid white 1px;
@@ -76,7 +76,7 @@
         margin-top: 50px;
         margin-left: 10vw;
         margin-right: 10vw;
-        margin-bottom: 250px;
+        margin-bottom: 350px;
         height: 400px;
     }
 
@@ -285,7 +285,7 @@
         font-weight: 400;
         padding-top: 75px;
         padding-left: 20px;
-        width: calc(80vw - 40px);
+        width: calc(80vw - 20px);
         margin: 0;
         z-index: 2;
     }
@@ -300,7 +300,7 @@
         font-weight: 400;
         padding-top: 5px;
         padding-left: 20px;
-        width: calc(80vw - 40px);
+        width: calc(80vw - 20px);
         margin: 0;
         z-index: 2;
     }
@@ -359,7 +359,7 @@
         width: 80vw;
         height: 500px;
         margin-left: 10vw;
-        padding-top: 450px;
+        padding-top: 0px;
         border-radius: 10px;
     }
 
@@ -381,7 +381,7 @@
     }
 
     .message {
-        width: 52.5vw;
+        width: 55vw;
         height: 200px;
         background: #EFF3FE;
         color: #022140;
@@ -426,12 +426,12 @@
 
     .text8[type=left] {
         font-size: 12px;
-        line-height: 2opx;
+        line-height: 20px;
     }
 
     .text8[type=right] {
         font-size: 12px;
-        line-height: 2opx;
+        line-height: 20px;
     }
 
     .text9[type=left] {
@@ -495,7 +495,7 @@
         font-weight: 400;
         width: 150px;
         margin-left: calc(50vw - 100px);
-        margin-top: 300px;
+        margin-top: 100px;
         border-radius: 25px;
         outline: none;
         border: solid white 1px;
@@ -740,7 +740,7 @@
         font-weight: 400;
         padding-top: 75px;
         padding-left: 20px;
-        width: calc(80vw - 40px);
+        width: calc(80vw - 20px);
         margin: 0;
         z-index: 2;
     }
@@ -755,7 +755,7 @@
         font-weight: 400;
         padding-top: 5px;
         padding-left: 20px;
-        width: calc(80vw - 40px);
+        width: calc(80vw - 20px);
         margin: 0;
         z-index: 2;
     }
@@ -814,7 +814,7 @@
         width: 80vw;
         height: 500px;
         margin-left: 10vw;
-        padding-top: 450px;
+        padding-top: 0px;
         border-radius: 10px;
     }
 
@@ -836,7 +836,7 @@
     }
 
     .message {
-        width: 52.5vw;
+        width: 55vw;
         height: 200px;
         background: #EFF3FE;
         color: #022140;
@@ -874,7 +874,7 @@
     .landing {
         position: relative;
         background: url("../../Assets/images/background.png") no-repeat center center fixed;
-        background-size: 190vw;
+        background-size: 200vw;
         width: 100vw;
         height: 100vh;
     }
@@ -911,7 +911,7 @@
         font-weight: 400;
         width: 200px;
         margin-left: calc(50vw - 135px);
-        margin-top: 300px;
+        margin-top: 100px;
         border-radius: 25px;
         outline: none;
         border: solid white 1px;
@@ -1089,6 +1089,7 @@
         z-index: 1;
         border-radius: 10px;
         cursor: pointer;
+        margin-top: -70px;
     }
 
     .overlay[type=right] {
@@ -1338,7 +1339,7 @@
         font-weight: 400;
         width: 200px;
         margin-left: calc(50vw - 135px);
-        margin-top: 300px;
+        margin-top: 100px;
         border-radius: 25px;
         outline: none;
         border: solid white 1px;
@@ -1516,6 +1517,7 @@
         z-index: 1;
         border-radius: 10px;
         cursor: pointer;
+        margin-top: -70px;
     }
 
     .overlay[type=right] {
@@ -1765,7 +1767,7 @@
         font-weight: 400;
         width: 200px;
         margin-left: calc(50vw - 135px);
-        margin-top: 300px;
+        margin-top: 100px;
         border-radius: 25px;
         outline: none;
         border: solid white 1px;
@@ -1943,6 +1945,7 @@
         z-index: 1;
         border-radius: 10px;
         cursor: pointer;
+        margin-top: -70px;
     }
 
     .overlay[type=right] {

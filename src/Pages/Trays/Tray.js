@@ -39,8 +39,8 @@ class Tray extends React.Component {
 
     componentDidUpdate(previousProps, previousState) {
         if (previousProps !== this.props || !previousProps) {
-            if (this.props.tray_data.tray) {
-                this.setTray(this.props.tray_data.tray);
+            if (this.props.tray_data) {
+                this.setTray(this.props.tray_data);
                 this.state._id = this.props._id;
                 this.state.climate_id = this.props.climate_id;
                 this.state.nutrient_id = this.props.nutrient_id;
@@ -147,231 +147,47 @@ class Tray extends React.Component {
 
     submitHandler = () => {
         this.createTrayNotification();
-        const token = this.context.token
 
         if (this.state.action === "plant") {
-            var i;
-            var plant_id_list = [];
-            var plant_timestamp_list = [];
-            var exp_harvest_timestamp_list = [];
-            for (i = 0; i < this.state.serial_list.length; i++) {
-                plant_id_list[i] = '"' + this.state.plant_id_list[i].toString() + '"';
-                plant_timestamp_list[i] = '"' + new Date(this.state.plant_timestamp_list[i] / 1).toISOString() + '"';
-                exp_harvest_timestamp_list[i] = '"' + new Date(this.state.exp_harvest_timestamp_list[i] / 1).toISOString() + '"';
-            }
 
-            const requestBody = {
-                query: `
-                    mutation {
-                      updateTray(_id: "${this.state._id}", tray_number: ${this.state.tray_number}, plant_id_list: [${plant_id_list}], plant_timestamp_list: [${plant_timestamp_list}], exp_harvest_timestamp_list: [${exp_harvest_timestamp_list}]) {
-                        tray_number
-                        tray_id
-                        tray_name
-                        tray_type
-                        num_slots
-                        spacing_configuration
-                        serial_list
-                        par_multiplier_list
-                        plant_id_list
-                        plant_timestamp_list
-                        exp_harvest_timestamp_list
-                      }
-                    }
-                `
-            };
-
-            fetch('http://localhost:8000/graphql', {
-                method: 'POST',
-                body: JSON.stringify(requestBody),
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: 'Bearer ' + token
-                }
-            })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.setState({
-                    tray_data: resData.data
-                });
-                this.state.tray_data = resData.data;
-            })
-            .catch(err => {
-                console.log(err);
-            });
         }
-        else if (this.state.action === "harvest") {
-            var plant = this.state.plant_id_list[this.state.current_slot];
-            var plant_timestamp = this.state.plant_timestamp_list[this.state.current_slot];
-            var exp_harvest_timestamp = this.state.exp_harvest_timestamp_list[this.state.current_slot];
-            var act_harvest_timestamp = new Date()
 
+        else if (this.state.action === "harvest") {
             if (this.state.cutting === false) {
                 this.state.plant_id_list[this.state.current_slot] = "";
                 this.state.plant_timestamp_list[this.state.current_slot] = "";
                 this.state.exp_harvest_timestamp_list[this.state.current_slot] = "";
-
-                var i;
-                var plant_id_list = [];
-                var plant_timestamp_list = [];
-                var exp_harvest_timestamp_list = [];
-                for (i = 0; i < this.state.serial_list.length; i++) {
-                    plant_id_list[i] = '"' + this.state.plant_id_list[i].toString() + '"';
-                    plant_timestamp_list[i] = '"' + new Date(this.state.plant_timestamp_list[i] / 1).toISOString() + '"';
-                    exp_harvest_timestamp_list[i] = '"' + new Date(this.state.exp_harvest_timestamp_list[i] / 1).toISOString() + '"';
-                }
-
-                const requestBody1 = {
-                    query: `
-                        mutation {
-                          updateTray(_id: "${this.state._id}", tray_number: ${this.state.tray_number}, plant_id_list: [${plant_id_list}], plant_timestamp_list: [${plant_timestamp_list}], exp_harvest_timestamp_list: [${exp_harvest_timestamp_list}]) {
-                            tray_number
-                            tray_id
-                            tray_name
-                            tray_type
-                            num_slots
-                            spacing_configuration
-                            serial_list
-                            par_multiplier_list
-                            plant_id_list
-                            plant_timestamp_list
-                            exp_harvest_timestamp_list
-                          }
-                        }
-                    `
-                };
-
-                fetch('http://localhost:8000/graphql', {
-                    method: 'POST',
-                    body: JSON.stringify(requestBody1),
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization: 'Bearer ' + token
-                    }
-                })
-                .then(res => {
-                    if (res.status != 200) {
-                        throw new Error('Failed.');
-                    }
-                    return res.json();
-                })
-                .then(resData => {
-                    this.setState({
-                        tray_data: resData.data
-                    });
-                    this.state.tray_data = resData.data;
-                })
-                .catch(err => {
-                    console.log(err);
-                });
             }
-
-            var plant_timestamp_iso = '"' + new Date(plant_timestamp / 1).toISOString() + '"';
-            var exp_harvest_timestamp_iso = '"' + new Date(exp_harvest_timestamp / 1).toISOString() + '"';
-            var act_harvest_timestamp_iso = '"' + new Date(act_harvest_timestamp / 1).toISOString() + '"';
-            var timestamp = '"' + new Date().toISOString() + '"';
-            var avg_growth_rate = Number(this.weightElement.current.value) / ((act_harvest_timestamp - plant_timestamp) / 86400000000);
-
-            const requestBody2 = {
-                query: `
-                    mutation {
-                      createHarvest(harvestInput: {unit_id: "${this.state._id}", customer_id: "${this.context.customer_id}", tray_number: ${this.state.tray_number}, serial_id: ${this.state.serial_list[this.state.current_slot]}, plant_id: "${plant}", climate_id: "${this.state.climate_id}", nutrient_id: "${this.state.nutrient_id}", par_multiplier: ${this.state.par_multiplier_list[this.state.current_slot]}, plant_timestamp: ${plant_timestamp_iso}, exp_harvest_timestamp: ${exp_harvest_timestamp_iso}, act_harvest_timestamp: ${act_harvest_timestamp_iso}, weight: ${Number(this.weightElement.current.value)}, avg_growth_rate: ${avg_growth_rate}, timestamp: ${timestamp}}) {
-                        tray_number
-                        serial_id
-                        plant_id
-                        climate_id
-                        nutrient_id
-                        par_multiplier
-                        plant_timestamp
-                        exp_harvest_timestamp
-                        act_harvest_timestamp
-                        weight
-                        avg_growth_rate
-                        timestamp
-                      }
-                    }
-                `
-            };
-            fetch('http://localhost:8000/graphql', {
-                method: 'POST',
-                body: JSON.stringify(requestBody2),
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: 'Bearer ' + token
-                }
-            })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-
-            })
-            .catch(err => {
-                console.log(err);
-            });
         }
+
         this.hideModal();
         if (this.state.feedback === true) {
             this.setState({
                 redirect: true
             });
         }
-        else if (this.state.feedback === false) {
-            window.location.reload(false);
-        }
+        this.loadSlots();
     }
 
     loadCrops() {
-        const requestBody = {
-            query: `
-                query {
-                  plants {
-                    plant_id
-                    plant_name
-                    plant_species
-                    plant_type
-                    spacing_configuration
-                    germination_period
-                    cuttings_io
-                    growth_period
-                    cuttings_period
-                    organic_io
-                    description
-                  }
-                }
-            `
-        };
+        const plants = ([{
+            'cuttings_io': true,
+            'cuttings_period': "3-5",
+            'description': "Genovese basil, our most popular variety of basil, is sweet, aromatic, and grows quickly and full. It is widely used to make pesto sauce and is frequently used in Italian and Mediterranean cuisine. If you are looking for a flavorful, large basil leaf this is the variety for you.",
+            'germination_period': "5-10",
+            'growth_period': "14-21",
+            'organic_io': true,
+            'plant_id': "XWArs",
+            'plant_name': "Genovese Basil",
+            'plant_species': "Basil",
+            'plant_type': "Herb",
+            'spacing_configuration': "VOkvP"
+        }]);
 
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                if (this.state.crop_list = []) {
-                    this.setState({
-                        crop_list: resData.data.plants
-                    });
-                }
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        this.state.crop_list = plants;
+        this.setState({
+            crop_list: plants
+        });
     }
 
     createTrayNotification = () => {
@@ -474,12 +290,12 @@ class Tray extends React.Component {
     loadPlantModal = () => {
         return (
             <Modal
-                className="modal-backdrop"
+                className="modal-backdrop1"
                 isOpen={this.state.show_plant_modal}
                 onClose={() => {this.hideModal()}}
                 transparent={true}
             >
-                <div class="modal-main">
+                <div class="modal-main1">
                     <i class="fa fa-times fa-1x" style={{ float: "right", marginRight: "30px", marginTop: "25px", color: "gray", cursor: "pointer" }} onClick={() => {this.hideModal()}}></i>
                     <h1 style={{ color: this.state.color_code_list[this.state.current_slot] }}>POD {this.state.current_slot}: {this.state.current_plant}</h1>
                     <h2 style={{ marginTop: "50px" }}>
@@ -508,12 +324,12 @@ class Tray extends React.Component {
     loadHarvestModal = () => {
         return (
             <Modal
-                className="modal-backdrop"
+                className="modal-backdrop1"
                 isOpen={this.state.show_harvest_modal}
                 onClose={() => {this.hideModal()}}
                 transparent={true}
             >
-                <div class="modal-main">
+                <div class="modal-main1">
                     <i class="fa fa-times fa-1x" style={{ float: "right", marginRight: "30px", marginTop: "25px", color: "gray", cursor: "pointer" }} onClick={() => {this.hideModal()}}></i>
                     <h1 style={{ color: "#DE5E3B" }}>POD {this.state.current_slot}: {this.state.current_plant}</h1>
                     <h2>Expected {this.state.action}: {this.state.current_timestamp}</h2>

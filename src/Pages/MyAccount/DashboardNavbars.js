@@ -7,12 +7,11 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 class DashboardNavbars extends React.Component {
     state = {
         notification_list: [],
-        customer_name: ''
+        customer_name: 'Frank Luse'
     }
 
     componentDidMount() {
         this.fetchNotifications();
-        this.fetchCustomer();
     }
 
     logout = () => {
@@ -20,80 +19,16 @@ class DashboardNavbars extends React.Component {
     }
 
     fetchNotifications() {
-        const customer_id = this.context.customer_id;
-        const requestBody = {
-            query: `
-                query {
-                  notifications(customer_id: "${customer_id}") {
-                    notification_id
-                    notification_type
-                    notification_message
-                  }
-                }
-            `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.setState({
-                    notification_list: resData.data.notifications
-                });
-                this.state.notification_list = resData.data.notifications;
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }
-
-    fetchCustomer() {
-        const customer_id = this.context.customer_id;
-        const token = this.context.token;
-        console.log(customer_id)
-        const requestBody = {
-            query: `
-                query {
-                  customer(customer_id: "${customer_id}") {
-                    customer_name
-                  }
-                }
-            `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'bearer ' + token
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.setState({
-                    customer_name: resData.data.customer_name
-                });
-                this.state.customer_name = resData.data.customer.customer_name;
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        const notifications = ([
+            {'notification_type': "success", notification_message: "You successfully planted a Genovese Basil crop!"},
+            {'notification_type': "success", notification_message: "You successfully planted a Romaine Lettuce crop!"},
+            {'notification_type': "info", notification_message: "Your account settings have been updated."},
+            {'notification_type': "warning", notification_message: "Your water tank is running low."}
+        ])
+        this.state.notification_list = notifications;
+        this.setState({
+            notification_list: notifications
+        });
     }
 
     loadNotifications = () => {
@@ -121,9 +56,9 @@ class DashboardNavbars extends React.Component {
                             <div className="header-icons">
                                 <div class="dropdown">
                                     <a class="drop-button" type="notification" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <i class="fa fa-bell icon fa-lg" style={{ position: "absolute", left: "84.5vw" }}></i>
+                                        <i class="fa fa-bell icon fa-lg" style={{ position: "absolute"  }}></i>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink" id="notification-menu">
+                                    <div class="dropdown-menu dropdown-menu-right" type="notification" aria-labelledby="dropdownMenuLink" id="notification-menu">
                                         {this.loadNotifications()}
                                     </div>
                                 </div>
@@ -131,9 +66,9 @@ class DashboardNavbars extends React.Component {
                                     <a class="drop-button" type="account" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fa fa-user icon fa-lg" style={{ position: "absolute" }}></i>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                                    <div class="dropdown-menu dropdown-menu-right" type="profile" aria-labelledby="dropdownMenuLink">
                                         <li class="dropdown-item" type="account" style={{ background: "transparent" }}><a href="/dashboard/myprofile">My Profile</a></li>
-                                        <li class="dropdown-item" type="account" style={{ background: "transparent" }}><a onClick={this.logout()} href="/signin">Log Out</a></li>
+                                        <li class="dropdown-item" type="account" style={{ background: "transparent" }}><a onClick={this.logout()} href="/">Log Out</a></li>
                                     </div>
                                 </div>
                                 <script type="text/javascript">

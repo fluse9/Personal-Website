@@ -13,7 +13,7 @@
         grid-template-rows: 300px calc(90vw + 50px) 300px 300px 300px;
         grid-column-gap: 20px;
         justify-content: center;
-        margin-left: -25px;
+        margin-left: -70px;
     }
 
     .card[type=status]:first-child {
@@ -164,7 +164,7 @@
         margin-top: 84px !important;
         background-color: #F2F2F2;
         border: 0;
-        width: 10px;
+        width: 20px;
         height: 20px;
         border: 1px solid #232323;
         border-radius: 100px;
@@ -172,146 +172,14 @@
         box-shadow: 0 0 2px #232323;
         box-shadow: 0 0 1px #232323 inset;
     }
-}
 
-@media only screen and (min-width: 45em) and (max-width: 75em) {
-    .main-cards[type=status] {
-        display: grid;
-        grid-template-columns: 45vw 45vw;
-        grid-template-rows: 300px 620px 300px 300px;
-        grid-column-gap: 20px;
-        justify-content: center;
-        margin-left: -50px;
-    }
-
-    .card[type=status]:first-child {
-        grid-column: 1;
-        grid-row: 2 / 4;
-        padding: 0 !important;
-        height: 900px;
-        width: 200%;
-        background: transparent;
-        border: none;
-        outline: none;
-        box-shadow: none;
-    }
-
-    .card[type=status]:nth-child(2) {
-        grid-column: 1;
-        grid-row: 1;
-        height: 235px;
-        width: 200%;
-        border-radius: 50px;
-        top: 50px;
-        box-shadow: 0 0 5px #BABABA;
-        background-color: #F2F2F2;
-        padding-left: 50px;
-    }
-
-    .card[type=status]:nth-child(3) {
-        grid-column: 1;
-        grid-row: 4;
-        height: 265px;
-        border-radius: 50px;
-        width: 200%;
-        box-shadow: 0 0 5px #BABABA;
-        background-color: #F2F2F2;
-        padding-left: 50px;
-    }
-
-    .card[type=status]:nth-child(4) {
-        grid-column: 1;
-        grid-row: 5;
-        height: 265px;
-        width: 95%;
-        border-radius: 50px;
-        top: -20px;
-        box-shadow: 0 0 5px #BABABA;
-        background-color: #F2F2F2;
-        padding-left: 40px;
-        align-items: center !important;
-    }
-
-    .card[type=status]:nth-child(5) {
-        grid-column: 2;
-        grid-row: 5;
-        height: 265px;
-        width: 95%;
-        border-radius: 50px;
-        top: -20px;
-        box-shadow: 0 0 5px #BABABA;
-        background-color: #F2F2F2;
-        padding-left: 40px;
-        align-items: center !important;
-    }
-
-    #select-terrafarm1 {
-        display: none;
-    }
-
-    #select-tray1 {
-        display: none;
-    }
-
-    #led-info1 {
-        display: none;
-    }
-
-    #led-info3 {
-        display: none;
-    }
-
-    #climate-info1 {
-        display: none;
-    }
-
-    #nutrient-info1 {
-        display: none;
-    }
-
-    #climate-header1 {
-        display: none;
-    }
-
-    #nutrient-header1 {
-        display: none;
-    }
-
-    .button[type="led-submit"] {
+    .button[type=small-white-climate] {
         position: absolute;
-        margin-left: calc(89% - 170px);
-        margin-top: 190px;
-        background-color: #DE5E3B;
-        font-family: GothamBold;
-        border: 0;
-        width: 150px;
-        font-size: 20px;
-        border-radius: 25px;
-        color: #ECECED;
-        cursor: pointer;
-        box-shadow: 0 0 5px #FF6D45;
-    }
-
-    .light-mode-label {
-        position: absolute;
-        margin-left: 290px;
-        margin-top: 33px;
-        background-color: white;
-        border: 0;
-        width: 10px;
-        height: 10px;
-        border-radius: 100px;
-        cursor: pointer;
-        box-shadow: 0 0 5px #48B08C;
-    }
-
-    .button[type=small-white-led] {
-        position: absolute;
-        margin-left: 0px;
-        margin-top: 84px !important;
+        margin-left: -80px;
+        margin-top: 159px !important;
         background-color: #F2F2F2;
         border: 0;
-        width: 10px;
+        width: 20px;
         height: 20px;
         border: 1px solid #232323;
         border-radius: 100px;
@@ -328,7 +196,7 @@
         grid-template-rows: 300px 620px 300px 300px 300px;
         grid-column-gap: 20px;
         justify-content: center;
-        margin-left: -25px;
+        margin-left: -60px;
     }
 
     .card[type=status]:first-child {
@@ -479,7 +347,22 @@
         margin-top: 84px !important;
         background-color: #F2F2F2;
         border: 0;
-        width: 10px;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #232323;
+        border-radius: 100px;
+        cursor: pointer;
+        box-shadow: 0 0 2px #232323;
+        box-shadow: 0 0 1px #232323 inset;
+    }
+
+    .button[type=small-white-climate] {
+        position: absolute;
+        margin-left: -80px;
+        margin-top: 159px !important;
+        background-color: #F2F2F2;
+        border: 0;
+        width: 20px;
         height: 20px;
         border: 1px solid #232323;
         border-radius: 100px;
@@ -504,7 +387,7 @@
         grid-row: 2 / 4;
         padding: 0 !important;
         height: 900px;
-        width: 200%;
+        width: 45vw;
         background: transparent;
         border: none;
         outline: none;
@@ -624,6 +507,21 @@
         position: absolute;
         margin-left: 0px;
         margin-top: 84px !important;
+        background-color: #F2F2F2;
+        border: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #232323;
+        border-radius: 100px;
+        cursor: pointer;
+        box-shadow: 0 0 2px #232323;
+        box-shadow: 0 0 1px #232323 inset;
+    }
+
+    .button[type=small-white-climate] {
+        position: absolute;
+        margin-left: -80px;
+        margin-top: 159px !important;
         background-color: #F2F2F2;
         border: 0;
         width: 20px;
@@ -781,6 +679,21 @@
         box-shadow: 0 0 2px #232323;
         box-shadow: 0 0 1px #232323 inset;
     }
+
+    .button[type=small-white-climate] {
+        position: absolute;
+        margin-left: -215px;
+        margin-top: 159px !important;
+        background-color: #F2F2F2;
+        border: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #232323;
+        border-radius: 100px;
+        cursor: pointer;
+        box-shadow: 0 0 2px #232323;
+        box-shadow: 0 0 1px #232323 inset;
+    }
 }
 
 @media only screen and (min-width: 115em) {
@@ -927,6 +840,21 @@
         box-shadow: 0 0 2px #232323;
         box-shadow: 0 0 1px #232323 inset;
     }
+
+    .button[type=small-white-climate] {
+        position: absolute;
+        margin-left: -215px;
+        margin-top: 159px !important;
+        background-color: #F2F2F2;
+        border: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #232323;
+        border-radius: 100px;
+        cursor: pointer;
+        box-shadow: 0 0 2px #232323;
+        box-shadow: 0 0 1px #232323 inset;
+    }
 }
 
 .main[type=status] {
@@ -1030,21 +958,6 @@
     .button[type="led-submit"]:focus {
         outline: none;
     }
-
-.button[type=small-white-climate] {
-    position: absolute;
-    margin-left: -215px;
-    margin-top: 159px !important;
-    background-color: #F2F2F2;
-    border: 0;
-    width: 20px;
-    height: 20px;
-    border: 1px solid #232323;
-    border-radius: 100px;
-    cursor: pointer;
-    box-shadow: 0 0 2px #232323;
-    box-shadow: 0 0 1px #232323 inset;
-}
 
     .button[type=small-white-climate]:hover {
         outline: none;

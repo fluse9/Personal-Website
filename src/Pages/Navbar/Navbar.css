@@ -1,7 +1,8 @@
 @media only screen and (max-width: 31.33em) {
     .navbar {
         background: url("../../Assets/images/background.png") no-repeat center center fixed;
-        background-size: 275vw;
+        background-size: 375vw;
+        background-position: 45%;
         width: 100vw;
         height: 50px;
         overflow: hidden;
@@ -21,8 +22,9 @@
 
     .social-container {
         margin-right: 0px;
-        margin-top: 15px;
+        margin-top: 0px;
         float: right;
+        margin-left: 100px;
     }
 
     .nav-item {
@@ -31,7 +33,7 @@
         display: none;
     }
 
-    .modal-backdrop {
+    .nav-modal-backdrop {
         width: 100vw;
         height: 100vh;
         background: white;
@@ -40,7 +42,7 @@
         padding-top: 10px;
     }
 
-    .modal-main {
+    .nav-modal-main {
         background: white;
         padding-left: 10vw;
         padding-right: 10vw;
@@ -72,7 +74,8 @@
 @media only screen and (min-width: 31.33em) and (max-width: 50em) {
     .navbar {
         background: url("../../Assets/images/background.png") no-repeat center center fixed;
-        background-size: 250vw;
+        background-size: 350vw;
+        background-position: 45%;
         width: 100vw;
         height: 50px;
         overflow: hidden;
@@ -94,9 +97,11 @@
     }
 
     .social-container {
-        margin-right: 20px;
-        margin-top: 15px;
+        margin-right: 0px;
+        margin-top: 0px;
         float: right;
+        margin-left: 300px;
+        width: 100px;
     }
 
     .nav-item {
@@ -105,7 +110,7 @@
         display: none;
     }
 
-    .modal-backdrop {
+    .nav-modal-backdrop {
         width: 100vw;
         height: 100vh;
         background: white;
@@ -114,7 +119,7 @@
         padding-top: 10px;
     }
 
-    .modal-main {
+    .nav-modal-main {
         background: white;
         padding-left: 10vw;
         padding-right: 10vw;
@@ -146,7 +151,7 @@
 @media only screen and (min-width: 50em) and (max-width: 59em) {
     .navbar {
         background: url("../../Assets/images/background.png") no-repeat center center fixed;
-        background-size: 150vw;
+        background-size: 200vw;
         width: 100vw;
         height: 50px;
         overflow: hidden;
@@ -168,9 +173,10 @@
     }
 
     .social-container {
-        margin-right: 20px;
-        margin-top: 10px;
+        margin-right: 0px;
+        margin-top: 0px;
         float: right;
+        margin-left: 500px;
     }
 
     .nav-item {
@@ -179,7 +185,7 @@
         display: none;
     }
 
-    .modal-backdrop {
+    .nav-modal-backdrop {
         width: 100vw;
         height: 100vh;
         background: white;
@@ -188,7 +194,7 @@
         padding-top: 10px;
     }
 
-    .modal-main {
+    .nav-modal-main {
         background: white;
         padding-left: 10vw;
         padding-right: 10vw;
@@ -220,7 +226,7 @@
 @media only screen and (min-width: 59em) and (max-width: 84em) {
     .navbar {
         background: url("../../Assets/images/background.png") no-repeat center center fixed;
-        background-size: 150vw;
+        background-size: 190vw;
         width: 100vw;
         height: 50px;
         overflow: hidden;
@@ -238,6 +244,10 @@
         margin-left: 0;
     }
 
+    .brand {
+        padding-top: 20px;
+    }
+
     .social-container {
         margin-top: -20px;
         width: 15%;
@@ -247,11 +257,11 @@
     .nav-item-container {
         width: 75%;
         text-align: center;
-        margin-top: -40px;
-        margin-left: 10%;
+        margin-top: 0px;
+        margin-left: 0%;
     }
 
-    .nav-item>a {
+    .nav-item {
         font-size: 14px;
         color: white;
         font-family: 'Avenir Next';
@@ -270,11 +280,11 @@
         display: none;
     }
 
-    .modal-backdrop {
+    .nav-modal-backdrop {
         display: none;
     }
 
-    .modal-main {
+    .nav-modal-main {
         display: none;
     }
 
@@ -290,7 +300,7 @@
 @media only screen and (min-width: 84em) {
     .navbar {
         background: url("../../Assets/images/background.png") no-repeat center center fixed;
-        background-size: 100vw;
+        background-size: 120vw !important;
         width: 100vw;
         height: 50px;
         overflow: hidden;
@@ -306,16 +316,17 @@
     .brand-container {
         width: 10%;
         margin-left: 0;
+        padding-top: 20px;
     }
 
     .nav-item-container {
         width: 80%;
         text-align: center;
-        margin-top: -40px;
-        margin-left: 10%;
+        margin-top: 0px;
+        margin-left: 0%;
     }
 
-        .nav-item>a {
+        .nav-item {
             font-size: 16px;
             color: white;
             font-family: 'Avenir Next';
@@ -340,11 +351,11 @@
         display: none;
     }
 
-    .modal-backdrop {
+    .nav-modal-backdrop {
         display: none;
     }
 
-    .modal-main {
+    .nav-modal-main {
         display: none;
     }
 

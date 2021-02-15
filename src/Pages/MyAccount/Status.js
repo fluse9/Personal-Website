@@ -34,20 +34,6 @@ class Status extends React.Component {
         this.fetchNutrients();
     }
 
-    setTerrafarm(terrafarms) {
-        this.setState({
-            terrafarm_list: terrafarms,
-            current_terrafarm: 0,
-            _id: terrafarms[0]._id,
-            current_tray: 0,
-            climate_id: terrafarms[0].climate_id,
-            nutrient_id: terrafarms[0].nutrient_id,
-            led_brightness: terrafarms[0].led_brightness,
-            low_light_mode: terrafarms[0].low_light_mode
-        });
-        this.fetchTray();
-    }
-
     selectTerrafarm(terrafarm, index) {
         this.setState({
             current_terrafarm: index,
@@ -59,15 +45,15 @@ class Status extends React.Component {
         });
         this.state.current_terrafarm = index;
         this.state._id = terrafarm._id;
-        this.fetchTray();
     }
 
-    selectTray(tray, index) {
-        this.setState({
-            current_tray: index
-        });
+    selectTray(index) {
         this.state.current_tray = index;
-        this.fetchTray();
+        this.state.tray_data = this.state.terrafarm_list[this.state.current_terrafarm].trays_list[index];
+        this.setState({
+            current_tray: index,
+            tray_data: this.state.terrafarm_list[this.state.current_terrafarm].trays_list[index]
+        });
     }
 
     selectClimate(index) {
@@ -89,7 +75,7 @@ class Status extends React.Component {
         var i;
         for (i = 0; i < this.state.terrafarm_list.length; i++) {
             if (this.state.terrafarm_list[i].unit_name === this.state.terrafarm_list[this.state.current_terrafarm].unit_name) {
-                terrafarm_list[i] = <li class="dropdown-item" type="status" style={{ background: "transparent" }}><a href="javascript:;" id="current_terrafarm">{this.state.terrafarm_list[this.state.current_terrafarm].unit_name} <i class="fa fa-check icon" id="terrafarm_check" style={{ float: "right", marginRight: "30px", color: "white" }}></i></a></li>;
+                terrafarm_list[i] = <li class="dropdown-item" type="status" style={{ background: "transparent" }}><a href="javascript:;" id="current_terrafarm">{this.state.terrafarm_list[this.state.current_terrafarm].unit_name} <i class="fa fa-check icon" id="terrafarm_check" style={{ float: "right", color: "white" }}></i></a></li>;
             }
             if (this.state.terrafarm_list[i].unit_name != this.state.terrafarm_list[this.state.current_terrafarm].unit_name) {
                 const terrafarm = this.state.terrafarm_list[i];
@@ -105,7 +91,7 @@ class Status extends React.Component {
         var i;
         for (i = 0; i < this.state.terrafarm_list.length; i++) {
             if (this.state.terrafarm_list[this.state.current_terrafarm].trays_list[i].tray_name === this.state.terrafarm_list[this.state.current_terrafarm].trays_list[this.state.current_tray].tray_name) {
-                tray_list[i] = <li class="dropdown-item" type="status" style={{ background: "transparent" }}><a href="javascript:;" id="current_tray">{this.state.terrafarm_list[this.state.current_terrafarm].trays_list[this.state.current_tray].tray_name} <i class="fa fa-check icon" id="tray_check" style={{ float: "right", marginRight: "30px", color: "white" }}></i></a></li>;
+                tray_list[i] = <li class="dropdown-item" type="status" style={{ background: "transparent" }}><a href="javascript:;" id="current_tray">{this.state.terrafarm_list[this.state.current_terrafarm].trays_list[this.state.current_tray].tray_name} <i class="fa fa-check icon" id="tray_check" style={{ float: "right", color: "white" }}></i></a></li>;
             }
             else if (this.state.terrafarm_list[this.state.current_terrafarm].trays_list[i].tray_name != this.state.terrafarm_list[this.state.current_terrafarm].trays_list[this.state.current_tray].tray_name) {
                 const tray = this.state.terrafarm_list[this.state.current_terrafarm].trays_list[i];
@@ -121,7 +107,7 @@ class Status extends React.Component {
         var i;
         for (i = 0; i < this.state.climate_list.length; i++) {
             if (this.state.climate_list[i].climate_id === this.state.climate_id) {
-                climate_list[i] = <li class="dropdown-item" type="status" style={{ background: "transparent" }}><a href="javascript:;" id="current_tray">{this.state.climate_list[i].climate_name} <i class="fa fa-check icon" id="tray_check" style={{ float: "right", marginRight: "30px", color: "white" }}></i></a></li>;
+                climate_list[i] = <li class="dropdown-item" type="status" style={{ background: "transparent" }}><a href="javascript:;" id="current_tray">{this.state.climate_list[i].climate_name} <i class="fa fa-check icon" id="tray_check" style={{ float: "right", color: "white" }}></i></a></li>;
             }
             else if (this.state.climate_list[i].climate_id != this.state.climate_id) {
                 const index = i;
@@ -136,7 +122,7 @@ class Status extends React.Component {
         var i;
         for (i = 0; i < this.state.nutrient_list.length; i++) {
             if (this.state.nutrient_list[i].nutrient_id === this.state.nutrient_id) {
-                nutrient_list[i] = <li class="dropdown-item" type="status" style={{ background: "transparent" }}><a href="javascript:;" id="current_tray">{this.state.nutrient_list[i].nutrient_name} <i class="fa fa-check icon" id="tray_check" style={{ float: "right", marginRight: "30px", color: "white" }}></i></a></li>;
+                nutrient_list[i] = <li class="dropdown-item" type="status" style={{ background: "transparent" }}><a href="javascript:;" id="current_tray">{this.state.nutrient_list[i].nutrient_name} <i class="fa fa-check icon" id="tray_check" style={{ float: "right", color: "white" }}></i></a></li>;
             }
             else if (this.state.nutrient_list[i].nutrient_id != this.state.nutrient_id) {
                 const index = i;
@@ -147,244 +133,57 @@ class Status extends React.Component {
     }
 
     fetchTerrafarms() {
-        const customer_id = this.context.customer_id;
-        const requestBody = {
-            query: `
-                    query {
-                      terrafarms(customer_id: "${customer_id}") {
-                        _id
-                        unit_name
-                        low_light_mode
-                        led_brightness
-  	                    climate_id
-                        nutrient_id
-                        num_trays
-                        trays_list {
-                          tray_number
-                          tray_id
-                          tray_name
-                          tray_type
-                          num_slots
-                          spacing_configuration
-                          serial_list
-                          par_multiplier_list
-                          plant_id_list
-                          plant_timestamp_list
-                          exp_harvest_timestamp_list
-                        }
-                      }
-                    }
-                `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                if (this.state.terrafarm_list = []) {
-                    this.setTerrafarm(resData.data.terrafarms);
-                }
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }
-
-    fetchTray = () => {
-        const _id = this.state.terrafarm_list[this.state.current_terrafarm]._id;
-        const tray_number = this.state.current_tray;
-        const requestBody = {
-            query: `
-                    query {
-                      tray(_id: "${_id}", tray_number: ${tray_number}) {
-                        tray_number
-                        tray_id
-                        tray_name
-                        tray_type
-                        num_slots
-                        spacing_configuration
-                        serial_list
-                        par_multiplier_list
-                        plant_id_list
-                        plant_timestamp_list
-                        exp_harvest_timestamp_list
-                      }
-                    }
-                `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.setState({
-                    tray_data: resData.data
-                });
-                this.state.tray_data = resData.data;
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        const terrafarms = ([{
+            'unit_name': "Terrafarm Test",
+            'climate_id': "lYExg",
+            'led_brightness': 100,
+            'low_light_mode': false,
+            'num_trays': 2,
+            'nutrient_id': "HWXhc",
+            'trays_list': [{
+                'exp_harvest_timestamp_list': ["1610911607231", "0", "0", "1610911889487", "1610915293116", "1610915299048", "1610917327320", "0", "1614387479952", "0", "1614387449059", "0", "0", "0", "0", "0", "1614387441118", "1614727813542", "0", "1614387470894", "0", "0", "1614387456459", "0", "1614387462192"],
+                'num_slots': 25,
+                'par_multiplier_list': [0.4676, 0.5853, 0.6478, 0.7434, 0.9596, 0.6027, 0.6565, 0.7591, 0.9198, 0.5234, 0.6085, 0.7454, 0.8713, 0.9727, 0.601, 0.6844, 0.7876, 0.9111, 0.5231, 0.6853, 0.7748, 0.9073, 1.0096, 0.5754, 0.7033, 0.6542],
+                'plant_id_list': ["Genovese Basil", "", "", "Genovese Basil", "Genovese Basil", "Genovese Basil", "Genovese Basil", "", "Genovese Basil", "", "Genovese Basil", "", "", "", "", "", "Genovese Basil", "Genovese Basil", "", "Genovese Basil", "", "", "Genovese Basil", "", "Genovese Basil"],
+                'plant_timestamp_list': ["1608751607231", "0", "0", "1608751889487", "1608755293116", "1608755299048", "1608757327320", "0", "1612227479952", "0", "1612227449059", "0", "0", "0", "0", "0", "1612227441118", "1612567813542", "0", "1612227470894", "0", "0", "1612227456459", "0", "1612227462192"],
+                'serial_list': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
+                'spacing_configuration': "sZ4WK",
+                'tray_id': "R2KO0",
+                'tray_name': "Grow Tray 1",
+                'tray_number': 0,
+                'tray_type': "Grow"
+            }]
+        }]);
+        this.state.terrafarm_list = terrafarms;
+        this.setState({
+            terrafarm_list: terrafarms
+        });
+        this.selectTerrafarm(terrafarms[0], 0);
+        this.selectTray(0);
     }
 
     fetchClimates() {
-        const requestBody = {
-            query: `
-                    query {
-                      climates {
-                        climate_id
-                        climate_name
-                        climate_description
-                      }
-                    }
-                `
-        };
+        const climates = ([{
+            'climate_name': "Standard",
+            'climate_id': "lYExg"
+        }]);
 
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.setState({
-                    climate_list: resData.data.climates
-                });
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        this.state.climate_list = climates;
+        this.setState({
+            climate_list: climates
+        });
     }
 
     fetchNutrients() {
-        const requestBody = {
-            query: `
-                    query {
-                      nutrients {
-                        nutrient_id
-                        nutrient_name
-                        nutrient_description
-                      }
-                    }
-                `
-        };
+        const nutrients = ([{
+            'nutrient_name': "Aero Garden",
+            'nutrient_id': "HWXhc"
+        }]);
 
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.setState({
-                    nutrient_list: resData.data.nutrients
-                });
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }
-
-    setClimate = () => {
-        const token = this.context.token
-        const requestBody = {
-            query: `
-                    mutation {
-                      updateClimate(_id: "${this.state.terrafarm_list[this.state.current_terrafarm]._id}", climate_id: "${this.state.climate_id}") {
-                        climate_id
-                      }
-                    }
-                `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'bearer ' + token
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                console.log(resData.data)
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }
-
-    setNutrient = () => {
-        const token = this.context.token
-        const requestBody = {
-            query: `
-                    mutation {
-                      updateNutrient(_id: "${this.state.terrafarm_list[this.state.current_terrafarm]._id}", nutrient_id: "${this.state.nutrient_id}") {
-                        nutrient_id
-                      }
-                    }
-                `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'bearer ' + token
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                console.log(resData.data)
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        this.state.nutrient_list = nutrients;
+        this.setState({
+            nutrient_list: nutrients
+        });
     }
 
     updateLed = () => {
@@ -399,39 +198,7 @@ class Status extends React.Component {
             led_brightness = 100;
         }
 
-        const requestBody = {
-            query: `
-                    mutation {
-                      updateLed(_id: "${this.state.terrafarm_list[this.state.current_terrafarm]._id}", low_light_mode: ${this.state.low_light_mode}, led_brightness: ${led_brightness}) {
-                        low_light_mode
-                        led_brightness
-                      }
-                    }
-                `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'bearer ' + token
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                console.log(resData.data)
-                this.createLedNotification();
-                window.location.reload(false);
-            })
-            .catch(err => {
-                console.log(err);
-            });
+       this.createLedNotification();
     }
 
     createLedNotification = () => {

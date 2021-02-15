@@ -43,14 +43,14 @@ class PersonalNavbar extends React.Component {
                         <FontAwesomeIcon icon={faBars} size="lg" style={{ color: "white", marginLeft: "20px", marginTop: "15px", float: "left", cursor: "pointer" }}></FontAwesomeIcon>
                     </a>
                     <Modal
-                        className="modal-backdrop"
+                        className="nav-modal-backdrop"
                         isOpen={this.state.show_modal}
                         onClose={() => {this.hideModal()}}
                         transparent={true}
                         animationType={"slide"}
                     >
-                        <div class="modal-main">
-                            <i class="fa fa-times fa-lg" style={{ float: "right", marginRight: "-5vw", marginTop: "20px", color: "#232323", cursor: "pointer" }} onClick={() => {this.hideModal()}}></i>
+                        <div class="nav-modal-main">
+                            <i class="fa fa-times fa-lg" style={{ float: "right", marginRight: "-5vw", marginTop: "40px", color: "#232323", cursor: "pointer" }} onClick={() => {this.hideModal()}}></i>
                             <ul class="modal-list">
                                 <li class="modal-item">
                                     <Link activeClass="active" to="about" spy={true} smooth={true} offset={-70} duration={1000} onClick={() => this.hideModal()}>

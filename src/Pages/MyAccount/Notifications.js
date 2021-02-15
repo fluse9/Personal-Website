@@ -22,79 +22,30 @@ class Notification extends React.Component {
     }
 
     fetchNotifications() {
-        const customer_id = this.context.customer_id;
-        const requestBody = {
-            query: `
-                query {
-                  notifications(customer_id: "${customer_id}") {
-                    notification_id
-                    notification_type
-                    notification_message
-                  }
-                }
-            `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.setState({
-                    notification_list: resData.data.notifications
-                });
-                this.state.notification_list = resData.data.notifications;
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        const notifications = ([
+            {'notification_type': "success", notification_message: "You successfully planted a Genovese Basil crop!"},
+            {'notification_type': "success", notification_message: "You successfully planted a Romaine Lettuce crop!"},
+            {'notification_type': "info", notification_message: "Your account settings have been updated."},
+            {'notification_type': "warning", notification_message: "Your water tank is running low."}
+        ])
+        this.state.notification_list = notifications;
+        this.setState({
+            notification_list: notifications
+        });
     }
 
     deleteNotification = (index) => {
-        const customer_id = this.context.customer_id;
-        const token = this.context.token;
-        const notification_id = this.state.notification_list[index].notification_id;
-        const requestBody = {
-            query: `
-                mutation {
-                  deleteNotification(customer_id: "${customer_id}", notification_id: "${notification_id}") {
-                    notification_id
-                    notification_type
-                    notification_message
-                  }
-                }
-            `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'bearer ' + token
+        var i;
+        var notification_list = [];
+        for (i = 0; i < this.state.notification_list.length; i++) {
+            if (index != i) {
+                notification_list.push(this.state.notification_list[i]);
             }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.fetchNotifications();
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        }
+        this.state.notification_list = notification_list;
+        this.setState({
+            notification_list: notification_list
+        });
     }
 
     loadNotifications = () => {
@@ -102,22 +53,29 @@ class Notification extends React.Component {
         var notifications = [];
         for (i = 0; i < this.state.notification_list.length; i++) {
             var color;
-            if (this.state.notification_list[i].notification_type === "info") {
-                color = "black"
-            }
-            else if (this.state.notification_list[i].notification_type === "success" || this.state.notification_list[i].notification_type === "warning") {
-                color = "white"
-            }
             const index = i;
-            notifications[i] = (
+            if (this.state.notification_list[i].notification_type === "info") {
+                notifications[i] = (
                 <div class="notification" type={this.state.notification_list[i].notification_type}>
-                    <h1 class="notification-text" type={color}>{this.state.notification_list[i].notification_message}
+                    <h1 class="notification-text" style={{ color: "black" }}>{this.state.notification_list[i].notification_message}
                         <button class="notification-close">
-                            <i class="fa fa-times icon fa-s" style={{ color: {color} }} onClick={() => {this.deleteNotification(index)}}></i>
+                            <i class="fa fa-times icon fa-s" style={{ color: "black" }} onClick={() => {this.deleteNotification(index)}}></i>
                         </button>
                     </h1>
                 </div>
             );
+            }
+            else if (this.state.notification_list[i].notification_type === "success" || this.state.notification_list[i].notification_type === "warning") {
+                notifications[i] = (
+                <div class="notification" type={this.state.notification_list[i].notification_type}>
+                    <h1 class="notification-text" style={{ color: "#ECECED" }}>{this.state.notification_list[i].notification_message}
+                        <button class="notification-close">
+                            <i class="fa fa-times icon fa-s" style={{ color: "#ECECED" }} onClick={() => {this.deleteNotification(index)}}></i>
+                        </button>
+                    </h1>
+                </div>
+            );
+            }
         }
         return notifications;
     }

@@ -1,4 +1,4 @@
-.modal-backdrop {
+.modal-backdrop1 {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.75) !important;
     width: 100%;
@@ -8,7 +8,7 @@
     border: none;
 }
 
-.modal-main {
+.modal-main1 {
     position: absolute;
     background-color: #F2F2F2;
     width: 725px;
@@ -20,7 +20,7 @@
     box-shadow: 0 0 10px #232323;
 }
 
-    .modal-main h1 {
+    .modal-main1 h1 {
         text-align: left;
         font-family: GothamBold;
         font-size: 24px;
@@ -30,7 +30,7 @@
         padding-top: 30px;
     }
 
-    .modal-main h2 {
+    .modal-main1 h2 {
         text-align: left;
         font-family: 'Avenir Next';
         font-weight: 500;

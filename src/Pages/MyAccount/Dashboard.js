@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 import DashboardNavbars from "../../Pages/MyAccount/DashboardNavbars.js";
 import { Redirect } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import proto from "../../Assets/images/Proto_img_4.jpg";
 
 class Dashboard extends React.Component {
     state = {
@@ -202,217 +203,97 @@ class Dashboard extends React.Component {
     }
 
     fetchTerrafarms() {
-        const customer_id = this.context.customer_id
-        const requestBody = {
-            query: `
-                    query {
-                      terrafarms(customer_id: "${customer_id}") {
-                        _id
-                        led_brightness
-                        tank0_low
-                        tank1_low
-                        tank2_low
-                        num_trays
-                        trays_list {
-                          exp_harvest_timestamp_list
-                        }
-                      }
-                    }
-                `
-        };
+        const terrafarms = ([{
+            'led_brightness': 100,
+            'num_trays': 2,
+            'tank0_low': 1,
+            'tank1_low': 0,
+            'tank2_low': 0,
+            'trays_list': [{
+                'exp_harvest_timestamp_list': ["1610911607231", "0", "0", "1610911889487", "1610915293116", "1610915299048", "1610917327320", "0", "1614387479952", "0", "1614387449059", "0", "0", "0", "0", "0", "1614387441118", "1614727813542", "0", "1614387470894", "0", "0", "1614387456459", "0", "1614387462192"]
+            }]
+        }]);
 
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.setNextHarvest(resData.data.terrafarms);
-                this.setWaterLevel(resData.data.terrafarms);
-                this.setLedLevel(resData.data.terrafarms);
-                this.setNutrientLevel(resData.data.terrafarms);
-                this.setPhLevel(resData.data.terrafarms);
-                this.fetchStatus(resData.data.terrafarms);
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        this.setNextHarvest(terrafarms);
+        this.setWaterLevel(terrafarms);
+        this.setLedLevel(terrafarms);
+        this.setNutrientLevel(terrafarms);
+        this.setPhLevel(terrafarms);
+        this.fetchStatus(terrafarms);
     }
 
     fetchHarvests() {
-        const customer_id = this.context.customer_id;
-        const token = this.context.token;
+        const harvests = ([
+            {_id: "mZjMK", weight: 2, plant_id: "Genovese Basil", act_harvest_timestamp: "1608603622359"},
+            {_id: "kryIZ", weight: 2, plant_id: "Genovese Basil", act_harvest_timestamp: "1608678384120"},
+            {_id: "7tQof", weight: 2, plant_id: "Genovese Basil", act_harvest_timestamp: "1608679521805"},
+            {_id: "2R8c4", weight: 5, plant_id: "Genovese Basil", act_harvest_timestamp: "1608745864008"},
+            {_id: "aVSgc", weight: 3, plant_id: "Genovese Basil", act_harvest_timestamp: "1608745928446"},
+            {_id: "DCHpF", weight: 9, plant_id: "Genovese Basil", act_harvest_timestamp: "1608745933194"},
+            {_id: "ANbi3", weight: 12, plant_id: "Genovese Basil", act_harvest_timestamp: "1608745980644"},
+            {_id: "Cj0wj", weight: 23, plant_id: "Genovese Basil", act_harvest_timestamp: "1608939034047"},
+            {_id: "Xgm0w", weight: 54, plant_id: "Genovese Basil", act_harvest_timestamp: "1608939041451"},
+            {_id: "M9hu8", weight: 9, plant_id: "Genovese Basil", act_harvest_timestamp: "1608939064307"},
+            {_id: "VyJLD", weight: 3, plant_id: "Genovese Basil", act_harvest_timestamp: "1612227423223"},
+            {_id: "k0T10", weight: 6, plant_id: "Genovese Basil", act_harvest_timestamp: "1612227427750"},
+            {_id: "CbINq", weight: 7, plant_id: "Genovese Basil", act_harvest_timestamp: "1612227436164"},
+        ]);
 
-        const requestBody = {
-            query: `
-                query {
-                  harvests (customer_id: "${customer_id}") {
-                    _id
-                    weight
-                    plant_id
-                    act_harvest_timestamp
-                  }
-                }
-            `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'bearer ' + token
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.setState({
-                    harvest_list: resData.data.harvests
-                });
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        this.state.harvest_list = harvests;
+        this.setState({
+            harvest_list: harvests
+        });
     }
 
     fetchCrops() {
-        const requestBody = {
-            query: `
-                query {
-                  plants {
-                    plant_id
-                    plant_name
-                    water_use
-                    nutrient_use
-                    market_price
-                  }
-                }
-            `
-        };
+        const plants = ([{
+            'plant_id': "XWArs",
+            'plant_name': "Genovese Basil",
+            'water_use': 1.3,
+            'nutrient_use': 0.0004604167,
+            'market_price': 14
+        }]);
 
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.setState({
-                    crop_list: resData.data.plants
-                });
-                this.loadConventionalData();
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        this.state.crop_list = plants;
+        this.setState({
+            crop_list: plants
+        });
+        this.loadConventionalData();
     }
 
     fetchCustomer() {
-        const customer_id = this.context.customer_id;
-        const token = this.context.token;
+        const total_purchases = 1000;
 
-        const requestBody = {
-            query: `
-                query {
-                  customer (customer_id: "${customer_id}") {
-                    total_purchases
-                  }
-                }
-            `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'bearer ' + token
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.setState({
-                    terrafarm_cost: resData.data.customer.total_purchases
-                });
-                console.log(this.state.terrafarm_water)
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        this.state.terrafarm_cost = total_purchases;
+        this.setState({
+            terrafarm_cost: total_purchases
+        });
     }
 
     fetchStatus = (terrafarm_list) => {
-        const customer_id = this.context.customer_id;
-        const token = this.context.token;
-        var i;
-        var status_list = [];
-        for (i = 0; i < terrafarm_list.length; i++) {
-            const requestBody = {
-                query: `
-                    query {
-                      status (unit_id: "${terrafarm_list[i]._id}") {
-                        status
-                      }
-                    }
-                `
-            };
+        const status_list = ([{
+            'dewpoint': 7.65,
+            'dli': 14.56,
+            'humidity': 22.54,
+            'led_blue': 0.35,
+            'led_green': 0.2,
+            'led_red': 0.35,
+            'led_uv': 0,
+            'led_white': 0.1,
+            'nutrient_use': 34.5,
+            'ph_use': 6.1,
+            'reservoir_high': 0,
+            'reservoir_low': 1,
+            'reservoir_ph': 6.01,
+            'tank0_low': 1,
+            'tank1_low': 0,
+            'tank2_low': 1,
+            'temp': 28.75,
+            'vpd': 3.14,
+            'water_use': 8.7
+        }]);
 
-            fetch('http://localhost:8000/graphql', {
-                method: 'POST',
-                body: JSON.stringify(requestBody),
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: 'bearer ' + token
-                }
-            })
-                .then(res => {
-                    if (res.status != 200) {
-                        throw new Error('Failed.');
-                    }
-                    return res.json();
-                })
-                .then(resData => {
-                    if (resData) {
-                        var j;
-                        for (j = 0; j < resData.data.status.length; j++) {
-                            if (resData.data.status[j]) {
-                                status_list.push(resData.data.status[j].status);
-                            }
-                        }
-                    }
-                    if (i === terrafarm_list.length) {
-                        this.setStatusList(status_list, terrafarm_list);
-                    }
-                })
-                .catch(err => {
-                    console.log(err);
-                });
-        }
+        this.setStatusList(status_list, terrafarm_list);
     }
 
     renderRedirect = () => {
@@ -429,9 +310,6 @@ class Dashboard extends React.Component {
                 <div class="alert">
                     <h1><i class="fa fa-exclamation-triangle icon" style={{ color: "white" }}></i> NUTRIENT SUPPLY LOW</h1>
                 </div>
-                <div class="line">
-                    <div class="circle"></div>
-                </div>
                 <h2>Looks like you're running low on nutrients! Set up a new order for restock by {next_week.toDateString()}.</h2>
                 <button class="button" type="purchase">PURCHASE NOW {">"}</button>
             </div>
@@ -441,9 +319,6 @@ class Dashboard extends React.Component {
             <div class="card" type="dashboard">
                 <div class="alert">
                     <h1><i class="fa fa-exclamation-triangle icon" style={{ color: "white" }}></i> PH DOWN SUPPLY LOW</h1>
-                </div>
-                <div class="line">
-                    <div class="circle"></div>
                 </div>
                 <h2>Looks like you're running low on pH down solution! Set up a new order for restock by {next_week.toDateString()}.</h2>
                 <button class="button" type="purchase">PURCHASE NOW {">"}</button>
@@ -474,12 +349,12 @@ class Dashboard extends React.Component {
                             <div class="bar-axis"></div>
                             <div class="bargraph cf" data={this.state.conventional_cost} data-percent={((this.state.conventional_cost) / (this.state.terrafarm_cost + this.state.conventional_cost) * 100).toString() + "%"} onLoad={setTimeout(0)} style={{ backgroundColor: '#368051' }}>
                                 <span class="label"></span>
-                                <span class="count" id="cost1"></span>
+                                <span class="count" id="cost1" style={{ marginTop: "7px" }}></span>
                             </div>
                             <span class="label-actual">CONVENTIONAL FARMING</span>
                             <div class="bargraph cf" data={this.state.terrafarm_cost} data-percent={((this.state.terrafarm_cost) / (this.state.terrafarm_cost + this.state.conventional_cost) * 100).toString() + "%"} onLoad={setTimeout(0)} style={{ backgroundColor: '#48AC6D' }}>
                                 <span class="label light"></span>
-                                <span class="count" id="cost2"></span>
+                                <span class="count" id="cost2" style={{ marginTop: "7px" }}></span>
                             </div>
                             <span class="label-actual">TERRAFARM</span>
                         </div>
@@ -500,12 +375,12 @@ class Dashboard extends React.Component {
                             <div class="bar-axis"></div>
                             <div class="bargraph cf" data={this.state.conventional_water} data-percent={((this.state.conventional_water) / (this.state.terrafarm_water + this.state.conventional_water) * 100).toString() + "%"} onLoad={setTimeout(0)} style={{ backgroundColor: '#0A636B' }}>
                                 <span class="label"> </span>
-                                <span class="count" id="water1"></span>
+                                <span class="count" id="water1" style={{ marginTop: "7px" }}></span>
                             </div>
                             <span class="label-actual">CONVENTIONAL FARMING</span>
                             <div class="bargraph cf" data={this.state.terrafarm_water} data-percent={((this.state.terrafarm_water) / (this.state.terrafarm_water + this.state.conventional_water) * 100).toString() + "%"} onLoad={setTimeout(0)} style={{ backgroundColor: '#0C808B' }}>
                                 <span class="label light"></span>
-                                <span class="count" id="water2"></span>
+                                <span class="count" id="water2" style={{ marginTop: "7px" }}></span>
                             </div>
                             <span class="label-actual">TERRAFARM</span>
                         </div>
@@ -527,12 +402,12 @@ class Dashboard extends React.Component {
                             <div class="bar-axis"></div>
                             <div class="bargraph cf " data={this.state.conventional_nutrient * 453.592} data-percent={((this.state.conventional_nutrient) / (this.state.terrafarm_nutrient + this.state.conventional_nutrient) * 100).toString() + "%"} onLoad={setTimeout(0)} style={{ backgroundColor: '#368569' }}>
                                 <span class="label"></span>
-                                <span class="count" id="nutrient1"></span>
+                                <span class="count" id="nutrient1" style={{ marginTop: "7px" }}></span>
                             </div>
                             <span class="label-actual">CONVENTIONAL FARMING</span>
                             <div class="bargraph cf" data={this.state.terrafarm_nutrient * 453.592} data-percent={((this.state.terrafarm_nutrient) / (this.state.terrafarm_nutrient + this.state.conventional_nutrient) * 100).toString() + "%"} onLoad={setTimeout(0)} style={{ backgroundColor: '#48B08C' }}>
                                 <span class="label light"></span>
-                                <span class="count" id="nutrient2"></span>
+                                <span class="count" id="nutrient2" style={{ marginTop: "7px" }}></span>
                             </div>
                             <span class="label-actual">TERRAFARM</span>
                         </div>
@@ -629,7 +504,9 @@ class Dashboard extends React.Component {
                         <DashboardNavbars />
                         <main class="main" type="dashboard">
                             <div class="main-cards" type="dashboard">
-                                <div class="card" type="dashboard"></div>
+                                <div class="card" type="dashboard">
+                                    <img src={proto} alt="proto" style={{ width: "125%", marginTop: "30%" }} />
+                                </div>
                                 <div class="card" type="dashboard">
                                     <h3>MY TERRAFARM</h3>
                                     <h4>A brief overview of your Terrafarm's current status.</h4>

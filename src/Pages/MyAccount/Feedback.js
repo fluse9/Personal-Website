@@ -27,59 +27,16 @@ class Feedback extends React.Component {
     }
 
     fetchHarvests() {
-        const customer_id = this.context.customer_id;
-        const token = this.context.token;
+        const harvests = ([
+            {_id: "mZjMK", weight: 2, plant_id: "Genovese Basil", act_harvest_timestamp: "1608603622359"},
+            {_id: "kryIZ", weight: 2, plant_id: "Cherry Tomatoes", act_harvest_timestamp: "1608678384120"},
+            {_id: "7tQof", weight: 2, plant_id: "Romaine Lettuce", act_harvest_timestamp: "1608679521805"}
+        ]);
 
-        const requestBody = {
-            query: `
-                query {
-                  harvests (customer_id: "${customer_id}") {
-                    _id
-                    plant_id
-                    act_harvest_timestamp
-                    feedback {
-                      taste
-                      texture
-                      appearance
-                      comments
-                    }
-                  }
-                }
-            `
-        };
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'bearer ' + token
-            }
-        })
-            .then(res => {
-                if (res.status != 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                var harvest_list = [];
-                var i;
-                var j;
-                for (i = 0; i < resData.data.harvests.length; i++) {
-                    if (!resData.data.harvests[i].feedback.taste) {
-                        harvest_list.push(resData.data.harvests[i]);
-                        j++;
-                    }
-                }
-                this.setState({
-                    harvest_list: harvest_list,
-                });
-                this.state.harvest_list = harvest_list;
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        this.state.harvest_list = harvests;
+        this.setState({
+            harvest_list: harvests
+        });
     }
 
     loadHarvests = () => {
@@ -91,7 +48,7 @@ class Feedback extends React.Component {
                 const date_list = (new Date(this.state.harvest_list[i].act_harvest_timestamp / 1)).toDateString().split(' ');
                 const label = date_list[1] + " " + date_list[2] + ": " + this.state.harvest_list[i].plant_id;
                 if (this.state.current_harvest._id === this.state.harvest_list[i]._id) {
-                    elements[i] = <li class="dropdown-item" type="terrafarm" style={{ background: "transparent" }}><a id="current_harvest" onClick={() => this.setHarvest(id)} href="javascript:;">{label} <i id="check" class="fa fa-check icon" style={{ float: "right", marginRight: "50px", color: "gray" }}></i></a></li>;
+                    elements[i] = <li class="dropdown-item" type="terrafarm" style={{ background: "transparent" }}><a id="current_harvest" onClick={() => this.setHarvest(id)} href="javascript:;">{label} <i id="check" class="fa fa-check icon" style={{ float: "right", color: "gray" }}></i></a></li>;
                 }
                 else {
                     elements[i] = <li class="dropdown-item" type="terrafarm" style={{ background: "transparent" }}><a onClick={() => this.setHarvest(id)} href="javascript:;">{label}</a></li>;
@@ -110,52 +67,7 @@ class Feedback extends React.Component {
     }
 
     submitHandler = () => {
-        const taste = this.tasteElement.current.state.value;
-        const texture = this.textureElement.current.state.value;
-        const appearance = this.appearanceElement.current.state.value;
-        const comments = this.commentsElement.current.value;
 
-        const requestBody = {
-            query: `
-                mutation {
-                  updateHarvest (harvest_id: "${this.state.current_harvest._id}", feedbackInput: {taste: ${taste}, texture: ${texture}, appearance: ${appearance}, comments: "${comments}"}) {
-                    _id
-                    plant_id
-                    act_harvest_timestamp
-                    feedback {
-                      taste
-                      texture
-                      appearance
-                      comments
-                    }
-                  }
-                }
-            `
-        };
-
-        const token = this.context.token;
-
-        fetch('http://localhost:8000/graphql', {
-            method: 'POST',
-            body: JSON.stringify(requestBody),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + token
-            }
-        })
-            .then(res => {
-                if (res.status !== 200) {
-                    throw new Error('Failed.');
-                }
-                return res.json();
-            })
-            .then(resData => {
-                this.fetchHarvests();
-                window.location.reload(false);
-            })
-            .catch(err => {
-                console.log(err);
-            });
     }
 
     render() {

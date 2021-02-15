@@ -123,7 +123,7 @@
 
 .drop-button[type=notification] {
     float: left;
-    margin-left: 96vw;
+    margin-left: 84.5vw;
     font-size: 20px;
     background: #ECECED;
     border: none;
@@ -133,10 +133,21 @@
     color: transparent;
 }
 
-.dropdown-menu {
+.dropdown-menu[type=notification] {
     position: relative;
-    margin-top: 60px !important;
-    margin-right: 0% !important;
+    margin-top: 50px !important;
+    margin-right: -10% !important;
+    padding: 0;
+    background-color: white;
+    outline: none !important;
+    border: none !important;
+    box-shadow: 0 0 5px #BABABA !important;
+}
+
+.dropdown-menu[type=profile] {
+    position: relative;
+    margin-top: 50px !important;
+    margin-right: -10% !important;
     padding: 0;
     background-color: white;
     outline: none !important;

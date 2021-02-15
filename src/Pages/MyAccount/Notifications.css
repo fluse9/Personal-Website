@@ -148,6 +148,7 @@
         color: #232323;
     }
 
+
     .notification[type=success] {
         position: relative;
         background-color: #368568;
@@ -192,24 +193,13 @@
 }
 
 @media only screen and (min-width: 75em) {
-    .notification-text[type=white] {
-        text-align: left !important;
-        text-indent: 5px;
-        padding: 15px;
-        font-family: 'Avenir Next';
-        font-weight: 400;
-        font-size: 16px;
-        color: white;
-    }
-
-    .notification-text[type=black] {
+    .notification-text {
         text-align: left !important;
         padding: 20px;
         padding-right: 40px;
         font-family: 'Avenir Next';
         font-weight: 400;
         font-size: 16px !important;
-        color: #232323;
     }
 
     .notification[type=success] {
