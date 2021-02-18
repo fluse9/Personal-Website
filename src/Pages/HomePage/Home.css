@@ -2118,7 +2118,7 @@
     }
 
     .message {
-        width: calc(60% - 40px);
+        width: calc(60% - 20px);
         height: 200px;
         margin-left: 40%;
         background: #EFF3FE;
@@ -2127,6 +2127,7 @@
         font-size: 16px;
         line-height: 24px;
         font-weight: 500;
+        text-indent: 0 !important;
         border: none;
         outline: none;
         margin-top: 10px;
